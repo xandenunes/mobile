@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Projeto</string>
+    <string name="nav_txt">Navegação</string>
+    <string name="config_txt">Configuração</string>
+    <string name="gnss_txt">Gnss</string>
+    <string name="credito_txt">Créditos</string>
+    <string name="textcredito_txt">Sistema de Navegação versão 1.0</string>
+    <string name="histo_txt">Histórico</string>
+    <string name="rd_1_txt">DDDºDDDDD</string>
+    <string name="rd_2_txt">DDDº MM.MMM\'</string>
+    <string name="rd_3_txt">DDDº MM\' SS\'\'</string>
+    <string name="txtformato">Formato da coordenada</string>
+    <string name="txtunidade_txt">Unidade de apresentação</string>
+    <string name="rdKM_txt">Km/h</string>
+    <string name="rdMH_txt">Mph</string>
+    <string name="txtOrient_txt">Orientação do mapa</string>
+    <string name="rdNen_txt">Nenhuma</string>
+    <string name="rdCourse_txt">Course up</string>
+    <string name="rdNorth_txt">North up</string>
+    <string name="txtTipo_txt">Tipo do mapa</string>
+    <string name="rdVetor_txt">Vetorial</string>
+    <string name="rdImg_txt">Imagem de Satélite</string>
+    <string name="txtInfo_txt">Informações de tráfego</string>
+    <string name="txtProgramador1_txt">Davi Freitas Oliveira</string>
+    <string name="txtProgramador2_txt">Gesser</string>
+    <string name="txtProgramador3_txt">Pedro</string>
+    <string name="txtTituloProg">Desenvolvedores</string>
+</resources>
