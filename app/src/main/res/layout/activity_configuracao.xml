@@ -16,13 +16,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.064" />
+        app:layout_constraintVertical_bias="0.117" />
 
     <RadioGroup
         android:id="@+id/formatgroup"
         android:layout_width="190dp"
         android:layout_height="95dp"
-        android:layout_marginBottom="500dp"
+        android:layout_marginBottom="470dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.92"
@@ -57,14 +57,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.278" />
+        app:layout_constraintVertical_bias="0.327" />
 
     <RadioGroup
         android:id="@+id/unidadeGroup"
         android:layout_width="138dp"
         android:layout_height="65dp"
         android:layout_marginStart="200dp"
-        android:layout_marginBottom="280dp"
+        android:layout_marginBottom="220dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -97,6 +97,7 @@
         android:layout_width="156dp"
         android:layout_height="102dp"
         android:layout_marginStart="204dp"
+        android:layout_marginTop="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -137,7 +138,7 @@
         android:layout_width="115dp"
         android:layout_height="67dp"
         android:layout_marginStart="200dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="330dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
