@@ -4,64 +4,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fundo"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/button_config"
-        android:layout_width="371dp"
-        android:layout_height="43dp"
-        android:text="@string/config_txt"
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="190dp"
+        android:layout_height="175dp"
+        android:src="@drawable/logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.175" />
+        app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/button_credito"
-        android:layout_width="371dp"
-        android:layout_height="43dp"
-        android:text="@string/credito_txt"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+    <View
+        android:id="@+id/containerComponents"
+        style="@style/ContainerComponentsMain"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.479" />
+        app:layout_constraintTop_toBottomOf="@id/logo" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_nav"
-        android:layout_width="371dp"
-        android:layout_height="43dp"
+        style="@style/Button"
         android:text="@string/nav_txt"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.075" />
+        android:drawableRight="@drawable/ic_naveg"
+        app:layout_constraintStart_toStartOf="@id/containerComponents"
+        app:layout_constraintEnd_toEndOf="@id/containerComponents"
+        app:layout_constraintTop_toTopOf="@id/containerComponents"
+        />
 
-    <Button
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_config"
+        style="@style/Button"
+        android:text="@string/config_txt"
+        android:drawableRight="@drawable/ic_config"
+        app:layout_constraintStart_toStartOf="@id/containerComponents"
+        app:layout_constraintEnd_toEndOf="@id/containerComponents"
+        app:layout_constraintTop_toBottomOf="@id/button_nav"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_gnss"
-        android:layout_width="371dp"
-        android:layout_height="43dp"
+        style="@style/Button"
         android:text="@string/gnss_txt"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.278" />
+        android:drawableRight="@drawable/ic_gnss"
+        app:layout_constraintStart_toStartOf="@id/containerComponents"
+        app:layout_constraintEnd_toEndOf="@id/containerComponents"
+        app:layout_constraintTop_toBottomOf="@id/button_config"
+        />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_histo"
-        android:layout_width="371dp"
-        android:layout_height="43dp"
+        style="@style/Button"
         android:text="@string/histo_txt"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.475"
+        android:drawableRight="@drawable/ic_historic"
+        app:layout_constraintStart_toStartOf="@id/containerComponents"
+        app:layout_constraintEnd_toEndOf="@id/containerComponents"
+        app:layout_constraintTop_toBottomOf="@id/button_gnss"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_credito"
+        style="@style/Button"
+        android:text="@string/credito_txt"
+        android:drawableRight="@drawable/ic_creditos"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.382" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_histo"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fundo"
     tools:context=".Configuracao">
+
+    <View
+        android:id="@+id/containerComponents1"
+        style="@style/ContainerComponents1"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/containerComponents2"
+        style="@style/ContainerComponents2"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/containerComponents1" />
+
+    <View
+        android:id="@+id/containerComponents3"
+        style="@style/ContainerComponents3"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/containerComponents2" />
+
+    <View
+        android:id="@+id/containerComponents4"
+        style="@style/ContainerComponents4"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/containerComponents3" />
+
+    <View
+        android:id="@+id/containerComponents5"
+        style="@style/ContainerComponents5"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/containerComponents4" />
 
     <TextView
         android:id="@+id/txtformato"
@@ -13,21 +54,21 @@
         android:layout_marginStart="16dp"
         android:text="@string/txtformato"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.117" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/containerComponents1"
+        app:layout_constraintStart_toStartOf="@id/containerComponents1"
+        app:layout_constraintTop_toTopOf="@id/containerComponents1"
+        />
 
     <RadioGroup
         android:id="@+id/formatgroup"
         android:layout_width="190dp"
         android:layout_height="95dp"
-        android:layout_marginBottom="470dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.92"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@id/containerComponents1"
+        app:layout_constraintStart_toEndOf="@id/txtformato"
+        app:layout_constraintTop_toTopOf="@id/containerComponents1">
+
 
         <RadioButton
             android:id="@+id/rd_1"
@@ -53,21 +94,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
         android:text="@string/txtunidade_txt"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.327" />
+        app:layout_constraintBottom_toBottomOf="@id/containerComponents2"
+        app:layout_constraintStart_toStartOf="@id/containerComponents2"
+        app:layout_constraintTop_toTopOf="@id/containerComponents2" />
 
     <RadioGroup
         android:id="@+id/unidadeGroup"
         android:layout_width="138dp"
         android:layout_height="65dp"
-        android:layout_marginStart="200dp"
-        android:layout_marginBottom="220dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="@id/containerComponents2"
+        app:layout_constraintStart_toEndOf="@id/txtunidade"
+        app:layout_constraintTop_toTopOf="@id/containerComponents2">
 
         <RadioButton
             android:id="@+id/rdKM"
@@ -87,20 +128,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
         android:text="@string/txtOrient_txt"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@id/containerComponents3"
+        app:layout_constraintStart_toStartOf="@id/containerComponents3"
+        app:layout_constraintTop_toTopOf="@id/containerComponents3" />
 
     <RadioGroup
         android:id="@+id/orientGroup"
         android:layout_width="156dp"
         android:layout_height="102dp"
-        android:layout_marginStart="204dp"
-        android:layout_marginTop="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@id/containerComponents3"
+        app:layout_constraintStart_toEndOf="@id/txtOrient"
+        app:layout_constraintTop_toTopOf="@id/containerComponents3">
 
         <RadioButton
             android:id="@+id/rdNen"
@@ -127,21 +169,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
         android:text="@string/txtTipo_txt"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.744" />
+        app:layout_constraintBottom_toBottomOf="@id/containerComponents4"
+        app:layout_constraintStart_toStartOf="@id/containerComponents4"
+        app:layout_constraintTop_toTopOf="@id/containerComponents4" />
 
     <RadioGroup
         android:id="@+id/tipoGroup"
-        android:layout_width="115dp"
+        android:layout_width="163dp"
         android:layout_height="67dp"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="330dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="@id/containerComponents4"
+        app:layout_constraintStart_toEndOf="@id/txtTipo"
+        app:layout_constraintTop_toTopOf="@id/containerComponents4">
 
         <RadioButton
             android:id="@+id/rdVetor"
@@ -161,22 +203,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
         android:text="@string/txtInfo_txt"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.905" />
+        app:layout_constraintBottom_toBottomOf="@id/containerComponents5"
+        app:layout_constraintStart_toStartOf="@id/containerComponents5"
+        app:layout_constraintTop_toTopOf="@id/containerComponents5" />
 
     <ToggleButton
         android:id="@+id/togInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="204dp"
+
         android:editable="false"
         android:text="ToggleButton"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.942" />
+        android:layout_marginTop="2dp"
+        app:layout_constraintEnd_toEndOf="@id/containerComponents5"
+        app:layout_constraintStart_toEndOf="@id/txtInfo"
+        app:layout_constraintTop_toTopOf="@id/containerComponents5"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

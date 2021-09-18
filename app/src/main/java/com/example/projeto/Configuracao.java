@@ -21,6 +21,7 @@ private boolean confere2, confere3, unidadeMh, orient2, orient3, tipo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_configuracao);
         sharedPrefs = getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
 
@@ -146,7 +147,6 @@ private boolean confere2, confere3, unidadeMh, orient2, orient3, tipo;
 
         if(buttonView.getId()==R.id.rdImg && buttonView.isChecked())
             Toast.makeText(this, "Você escolheu Imagem de Satélite", Toast.LENGTH_SHORT).show();
-
          */
     }
 

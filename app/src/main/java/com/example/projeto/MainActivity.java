@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
         Button button_nav = (Button) findViewById(R.id.button_nav);
         Button button_gnss = (Button) findViewById(R.id.button_gnss);

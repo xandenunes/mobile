@@ -22,8 +22,11 @@
     <string name="rdImg_txt">"Satellite Image "</string>
     <string name="txtInfo_txt">" Traffic information"</string>
     <string name="txtProgramador1_txt">Davi Freitas Oliveira</string>
-    <string name="txtProgramador2_txt">Gesser</string>
-    <string name="txtProgramador3_txt">Pedro</string>
+    <string name="txtProgramador2_txt">Gesser Pascoal Nunes Filho</string>
+    <string name="txtProgramador3_txt">Pedro Campos</string>
     <string name="txtTituloProg">" Developers"</string>
     <string name="textcredito_txt">" Navigation System version 1.0"</string>
+    <string name="txt_titleCred">About</string>
+    <string name="txtProgramador4_txt">Matheus Filipe</string>
+    <string name="txtProgramador5_txt">Xande</string>
 </resources>

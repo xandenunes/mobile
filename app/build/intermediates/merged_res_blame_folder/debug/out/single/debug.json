@@ -1,31 +1,99 @@
 [
     {
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_logo.png.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\drawable\\logo.png"
+    },
+    {
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_naveg.xml.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\drawable\\ic_naveg.xml"
+    },
+    {
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_fundo.xml.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\drawable\\fundo.xml"
+    },
+    {
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_creditos.xml.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\drawable\\ic_creditos.xml"
+    },
+    {
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_buttonshape.xml.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\drawable\\buttonshape.xml"
+    },
+    {
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_credito.xml.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\layout\\activity_credito.xml"
+    },
+    {
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
         "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_configuracao.xml.flat",
         "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\layout\\activity_configuracao.xml"
     },
     {
-        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_gnss.xml.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\drawable\\ic_gnss.xml"
     },
     {
-        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_container_components.xml.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\drawable\\container_components.xml"
     },
     {
-        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_historic.xml.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\drawable\\ic_historic.xml"
     },
     {
-        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_foreground.png"
     },
     {
         "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_launcher_background.xml.flat",
@@ -36,35 +104,23 @@
         "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_icone.png.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\drawable\\icone.png"
     },
     {
-        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_credito.xml.flat",
-        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\layout\\activity_credito.xml"
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_config.xml.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\drawable\\ic_config.xml"
     },
     {
-        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
     }
 ]
