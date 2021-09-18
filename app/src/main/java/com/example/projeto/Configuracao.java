@@ -16,12 +16,14 @@ private SharedPreferences sharedPrefs;
 private SharedPreferences.Editor sharedPrefsEditor;
 private RadioButton rd_1, rd_2, rd_3, rdKM, rdMH,rdNen, rdNorth, rdCourse, rdVetor, rdImg;
 private ToggleButton togInfo;
+private boolean confere2, confere3, unidadeMh, orient2, orient3, tipo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configuracao);
         sharedPrefs = getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
+
         //Info
         togInfo = (ToggleButton) findViewById(R.id.togInfo);
         togInfo.setOnCheckedChangeListener(this);
@@ -36,9 +38,20 @@ private ToggleButton togInfo;
         rd_2.setOnCheckedChangeListener(this);
         rd_3.setOnCheckedChangeListener(this);
 
-        rd_1.setChecked(sharedPrefs.getBoolean("Coordenada_1", false));
-        rd_2.setChecked(sharedPrefs.getBoolean("Coordenada_2", false));
-        rd_3.setChecked(sharedPrefs.getBoolean("Coordenada_3", false));
+        confere2 = sharedPrefs.getBoolean("Coordenada_2", false);
+        confere3 = sharedPrefs.getBoolean("Coordenada_3", false);
+
+        if(confere2 == false && confere3 == false){
+            rd_1.setChecked(true);
+        }
+
+        if(confere2 == true){
+            rd_2.setChecked(true);
+        }
+
+        if(confere3 == true){
+            rd_3.setChecked(true);
+        }
 
 
         //Grupo Unidade
@@ -47,9 +60,15 @@ private ToggleButton togInfo;
         rdKM.setOnCheckedChangeListener(this);
         rdMH.setOnCheckedChangeListener(this);
 
-        rdKM.setChecked(sharedPrefs.getBoolean("KM", false));
-        rdMH.setChecked(sharedPrefs.getBoolean("MH", false));
 
+        unidadeMh = sharedPrefs.getBoolean("MH", false);
+
+        if(unidadeMh == false){
+            rdKM.setChecked(true);
+        }
+        else{
+            rdMH.setChecked(true);
+        }
 
         //Grupo Orientação
         rdNen = (RadioButton) findViewById(R.id.rdNen);
@@ -59,9 +78,18 @@ private ToggleButton togInfo;
         rdNorth.setOnCheckedChangeListener(this);
         rdCourse.setOnCheckedChangeListener(this);
 
-        rdNen.setChecked(sharedPrefs.getBoolean("Nenhum", false));
-        rdNorth.setChecked(sharedPrefs.getBoolean("North", false));
-        rdCourse.setChecked(sharedPrefs.getBoolean("Course", false));
+        orient2 = sharedPrefs.getBoolean("North", false);
+        orient3 = sharedPrefs.getBoolean("Course", false);
+
+        if(orient2 == false && orient3 == false){
+            rdNen.setChecked(true);
+        }
+        if(orient2 == true){
+            rdNorth.setChecked(true);
+        }
+        if(orient3 == true){
+            rdCourse.setChecked(true);
+        }
 
         //Grupo Tipo
         rdVetor = (RadioButton) findViewById(R.id.rdVetor);
@@ -69,9 +97,14 @@ private ToggleButton togInfo;
         rdVetor.setOnCheckedChangeListener(this);
         rdImg.setOnCheckedChangeListener(this);
 
-        rdVetor.setChecked(sharedPrefs.getBoolean("Vetor", false));
-        rdImg.setChecked(sharedPrefs.getBoolean("Imagem", false));
+        tipo = sharedPrefs.getBoolean("Imagem", false);
 
+        if(tipo == false){
+            rdVetor.setChecked(true);
+        }
+        else{
+            rdImg.setChecked(true);
+        }
     }
 
     @Override
