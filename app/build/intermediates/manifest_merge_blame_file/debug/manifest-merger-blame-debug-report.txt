@@ -11,7 +11,7 @@
 9-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml
 10
 11    <application
-11-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:5:5-28:19
+11-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:5:5-32:19
 12        android:allowBackup="true"
 12-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -29,38 +29,44 @@
 20        android:theme="@style/Theme.Projeto" >
 20-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:11:9-45
 21        <activity
-21-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:12:9-15:39
-22            android:name="com.example.projeto.Configuracao"
+21-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:12:9-14:39
+22            android:name="com.example.projeto.MainActivity"
 22-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:13:13-41
-23            android:exported="true"
-23-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:15:13-36
-24            android:label="@string/config_txt" />
-24-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:14:13-47
-25        <activity
-25-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:16:9-19:39
-26            android:name="com.example.projeto.Credito"
+23            android:exported="true" />
+23-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:14:13-36
+24        <activity
+24-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:15:9-18:50
+25            android:name="com.example.projeto.Configuracao"
+25-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:16:13-41
+26            android:exported="true"
 26-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:17:13-36
-27            android:exported="true"
-27-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:19:13-36
-28            android:label="@string/credito_txt" />
-28-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:18:13-48
-29        <activity
-29-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:20:9-27:20
-30            android:name="com.example.projeto.MainActivity"
-30-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:21:13-41
-31            android:exported="true" >
-31-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:22:13-36
-32            <intent-filter>
-32-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:23:13-26:29
-33                <action android:name="android.intent.action.MAIN" />
-33-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:24:17-69
-33-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:24:25-66
-34
-35                <category android:name="android.intent.category.LAUNCHER" />
-35-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:25:17-77
-35-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:25:27-74
-36            </intent-filter>
-37        </activity>
-38    </application>
-39
-40</manifest>
+27            android:label="@string/config_txt" />
+27-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:18:13-47
+28        <activity
+28-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:19:9-22:51
+29            android:name="com.example.projeto.Credito"
+29-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:20:13-36
+30            android:exported="true"
+30-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:21:13-36
+31            android:label="@string/credito_txt" />
+31-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:22:13-48
+32        <activity
+32-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:23:9-31:20
+33            android:name="com.example.projeto.SplashActivity"
+33-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:24:13-43
+34            android:exported="true" >
+34-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:25:13-36
+35            <intent-filter>
+35-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:26:13-30:29
+36                <action android:name="android.intent.action.MAIN" />
+36-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:27:17-69
+36-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:27:25-66
+37
+38                <category android:name="android.intent.category.LAUNCHER" />
+38-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:29:17-77
+38-->C:\Users\Davi\Documents\projetos\mobile\app\src\main\AndroidManifest.xml:29:27-74
+39            </intent-filter>
+40        </activity>
+41    </application>
+42
+43</manifest>

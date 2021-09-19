@@ -19,6 +19,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.Projeto" >
         <activity
+            android:name="com.example.projeto.MainActivity"
+            android:exported="true" />
+        <activity
             android:name="com.example.projeto.Configuracao"
             android:exported="true"
             android:label="@string/config_txt" />
@@ -27,7 +30,7 @@
             android:exported="true"
             android:label="@string/credito_txt" />
         <activity
-            android:name="com.example.projeto.MainActivity"
+            android:name="com.example.projeto.SplashActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

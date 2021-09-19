@@ -10,18 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Projeto">
         <activity
-            android:name=".Configuracao"
-            android:label="@string/config_txt"
+            android:name=".MainActivity"
             android:exported="true" />
+        <activity
+            android:name=".Configuracao"
+            android:exported="true"
+            android:label="@string/config_txt" />
         <activity
             android:name=".Credito"
-            android:label="@string/credito_txt"
-            android:exported="true" />
+            android:exported="true"
+            android:label="@string/credito_txt" />
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

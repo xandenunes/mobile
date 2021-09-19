@@ -2418,6 +2418,7 @@ layout abc_tooltip
 layout activity_configuracao
 layout activity_credito
 layout activity_main
+layout activity_splash
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
