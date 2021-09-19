@@ -7,7 +7,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -243,18 +243,14 @@
         app:layout_constraintStart_toStartOf="@id/containerComponents5"
         app:layout_constraintTop_toTopOf="@id/containerComponents5" />
 
-    <ToggleButton
-        android:id="@+id/togInfo"
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        android:layout_marginTop="2dp"
-        android:editable="false"
-        android:text="ToggleButton"
         app:layout_constraintEnd_toEndOf="@id/containerComponents5"
         app:layout_constraintStart_toEndOf="@id/txtInfo"
         app:layout_constraintTop_toTopOf="@id/containerComponents5"
-        tools:ignore="TextContrastCheck" />
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

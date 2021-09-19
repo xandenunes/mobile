@@ -1,21 +1,21 @@
 package com.example.projeto;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceScreen;
 import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.Toast;
-import android.widget.ToggleButton;
+
 
 public class Configuracao extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
 private SharedPreferences sharedPrefs;
 private SharedPreferences.Editor sharedPrefsEditor;
 private RadioButton rd_1, rd_2, rd_3, rdKM, rdMH,rdNen, rdNorth, rdCourse, rdVetor, rdImg;
-private ToggleButton togInfo;
+private SwitchCompat switchInfo;
 private boolean confere2, confere3, unidadeMh, orient2, orient3, tipo;
 
     @Override
@@ -26,11 +26,9 @@ private boolean confere2, confere3, unidadeMh, orient2, orient3, tipo;
         sharedPrefs = getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
 
         //Info
-        togInfo = (ToggleButton) findViewById(R.id.togInfo);
-        togInfo.setOnCheckedChangeListener(this);
-
-        //busca o valor booleano do toggle butoon, opção padrão desligado(false)
-        togInfo.setChecked(sharedPrefs.getBoolean("Informacao",false));
+        switchInfo = (SwitchCompat) findViewById(R.id.switchInfo);
+        switchInfo.setOnCheckedChangeListener(this);
+        switchInfo.setChecked(sharedPrefs.getBoolean("Informacao",false));
 
         //Grupo Coordenada
         rd_1 = (RadioButton) findViewById(R.id.rd_1);
@@ -116,7 +114,7 @@ private boolean confere2, confere3, unidadeMh, orient2, orient3, tipo;
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         /*
-        if(buttonView.getId()==R.id.togInfo && buttonView.isChecked())
+        if(buttonView.getId()==R.id.switchInfo && buttonView.isChecked())
             Toast.makeText(this, "Você escolheu Ligado", Toast.LENGTH_SHORT).show();
 
         //Grupo Coordenada
@@ -160,63 +158,63 @@ private boolean confere2, confere3, unidadeMh, orient2, orient3, tipo;
         super.onPause();
         sharedPrefsEditor = sharedPrefs.edit();
         if(sharedPrefsEditor!=null){
-            if(togInfo.isChecked()){
+
+            if(switchInfo.isChecked()){
                 sharedPrefsEditor.putBoolean("Informacao", true);
             }
-            if(!togInfo.isChecked()){
+            if(!switchInfo.isChecked()){
                 sharedPrefsEditor.putBoolean("Informacao", false);
             }
+
+            //Grupo Coordenada
             if(rd_1.isChecked()){
                 sharedPrefsEditor.putBoolean("Coordenada_1", true);
                 sharedPrefsEditor.putBoolean("Coordenada_2", false);
                 sharedPrefsEditor.putBoolean("Coordenada_3", false);
             }
-
             if(rd_2.isChecked()) {
                 sharedPrefsEditor.putBoolean("Coordenada_1", false);
                 sharedPrefsEditor.putBoolean("Coordenada_2", true);
                 sharedPrefsEditor.putBoolean("Coordenada_3", false);
             }
-
             if(rd_3.isChecked()) {
                 sharedPrefsEditor.putBoolean("Coordenada_1", false);
                 sharedPrefsEditor.putBoolean("Coordenada_2", false);
                 sharedPrefsEditor.putBoolean("Coordenada_3", true);
             }
 
+            //Grupo unidade
             if(rdKM.isChecked()){
                 sharedPrefsEditor.putBoolean("KM", true);
                 sharedPrefsEditor.putBoolean("MH", false);
             }
-
             if(rdMH.isChecked()){
                 sharedPrefsEditor.putBoolean("KM", false);
                 sharedPrefsEditor.putBoolean("MH", true);
             }
 
+            //Grupo orientação
             if(rdNen.isChecked()){
                 sharedPrefsEditor.putBoolean("Nenhum", true);
                 sharedPrefsEditor.putBoolean("North", false);
                 sharedPrefsEditor.putBoolean("Course", false);
             }
-
             if(rdNorth.isChecked()){
                 sharedPrefsEditor.putBoolean("Nenhum", false);
                 sharedPrefsEditor.putBoolean("North", true);
                 sharedPrefsEditor.putBoolean("Course", false);
             }
-
             if(rdCourse.isChecked()){
                 sharedPrefsEditor.putBoolean("Nenhum", false);
                 sharedPrefsEditor.putBoolean("North", false);
                 sharedPrefsEditor.putBoolean("Course", true);
             }
 
+            //Grupo tipo
             if(rdVetor.isChecked()){
                 sharedPrefsEditor.putBoolean("Vetor", true);
                 sharedPrefsEditor.putBoolean("Imagem", false);
             }
-
             if(rdImg.isChecked()){
                 sharedPrefsEditor.putBoolean("Vetor", false);
                 sharedPrefsEditor.putBoolean("Imagem", true);

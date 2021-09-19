@@ -2257,6 +2257,7 @@ id stretch
 id submenuarrow
 id submit_area
 id supportScrollUp
+id switchInfo
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
@@ -2299,7 +2300,6 @@ id tipoGroup
 id title
 id titleDividerNoCustom
 id title_template
-id togInfo
 id toggle
 id top
 id topPanel
