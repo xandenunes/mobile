@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--- definição da forma do botão da tela inicial-->
 <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle" >
+    <!---definição do arredondamento-->
     <corners android:radius="20dp" />
+
+    <!---definição do gradiente, estilo o backgroud-->
     <gradient
         android:startColor="@color/aqua"
         android:centerColor="@color/darkTurquoise"
@@ -8,6 +12,7 @@
         android:angle="180"
         />
 
+    <!--- definição do tamanho-->
     <size
         android:width="270dp"
         android:height="60dp"

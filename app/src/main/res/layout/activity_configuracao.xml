@@ -75,15 +75,17 @@
             android:id="@+id/rd_1"
             android:layout_width="match_parent"
             android:layout_height="32dp"
+            android:text="@string/rd_1_txt"
             android:textColor="@color/black"
-            android:text="@string/rd_1_txt" />
+            tools:ignore="TouchTargetSizeCheck" />
 
         <RadioButton
             android:id="@+id/rd_2"
             android:layout_width="match_parent"
             android:layout_height="29dp"
+            android:text="@string/rd_2_txt"
             android:textColor="@color/black"
-            android:text="@string/rd_2_txt" />
+            tools:ignore="TouchTargetSizeCheck" />
 
         <RadioButton
             android:id="@+id/rd_3"
@@ -91,7 +93,7 @@
             android:layout_height="36dp"
             android:text="@string/rd_3_txt"
             android:textColor="@color/black"
-            />
+            tools:ignore="TouchTargetSizeCheck" />
     </RadioGroup>
 
     <TextView
@@ -120,15 +122,17 @@
             android:id="@+id/rdKM"
             android:layout_width="match_parent"
             android:layout_height="34dp"
+            android:text="@string/rdKM_txt"
             android:textColor="@color/black"
-            android:text="@string/rdKM_txt" />
+            tools:ignore="TouchTargetSizeCheck" />
 
         <RadioButton
             android:id="@+id/rdMH"
             android:layout_width="match_parent"
             android:layout_height="31dp"
+            android:text="@string/rdMH_txt"
             android:textColor="@color/black"
-            android:text="@string/rdMH_txt" />
+            tools:ignore="TouchTargetSizeCheck" />
     </RadioGroup>
 
     <TextView
@@ -157,22 +161,25 @@
             android:id="@+id/rdNen"
             android:layout_width="match_parent"
             android:layout_height="32dp"
+            android:text="@string/rdNen_txt"
             android:textColor="@color/black"
-            android:text="@string/rdNen_txt" />
+            tools:ignore="TouchTargetSizeCheck" />
 
         <RadioButton
             android:id="@+id/rdNorth"
             android:layout_width="match_parent"
             android:layout_height="35dp"
+            android:text="@string/rdNorth_txt"
             android:textColor="@color/black"
-            android:text="@string/rdNorth_txt" />
+            tools:ignore="TouchTargetSizeCheck" />
 
         <RadioButton
             android:id="@+id/rdCourse"
             android:layout_width="match_parent"
             android:layout_height="34dp"
+            android:text="@string/rdCourse_txt"
             android:textColor="@color/black"
-            android:text="@string/rdCourse_txt" />
+            tools:ignore="TouchTargetSizeCheck" />
 
     </RadioGroup>
 
@@ -202,15 +209,17 @@
             android:id="@+id/rdVetor"
             android:layout_width="match_parent"
             android:layout_height="31dp"
+            android:text="@string/rdVetor_txt"
             android:textColor="@color/black"
-            android:text="@string/rdVetor_txt" />
+            tools:ignore="TouchTargetSizeCheck" />
 
         <RadioButton
             android:id="@+id/rdImg"
             android:layout_width="match_parent"
             android:layout_height="34dp"
+            android:text="@string/rdImg_txt"
             android:textColor="@color/black"
-            android:text="@string/rdImg_txt" />
+            tools:ignore="TouchTargetSizeCheck" />
     </RadioGroup>
 
     <TextView
@@ -231,11 +240,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+        android:layout_marginTop="2dp"
         android:editable="false"
         android:text="ToggleButton"
-        android:layout_marginTop="2dp"
         app:layout_constraintEnd_toEndOf="@id/containerComponents5"
         app:layout_constraintStart_toEndOf="@id/txtInfo"
-        app:layout_constraintTop_toTopOf="@id/containerComponents5"/>
+        app:layout_constraintTop_toTopOf="@id/containerComponents5"
+        tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--- definição da forma do conteiner-->
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--- definição da cor-->
     <solid android:color="@color/white"/>
+    <!--- definição do arredondamento-->
     <corners android:radius="20dp"/>
 </shape>

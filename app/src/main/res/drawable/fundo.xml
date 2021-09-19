@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--- definição do backgroud das telas-->
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--- definição do gradiente estilizado das telas, cores em ordem decrescente-->
     <gradient
         android:startColor="@color/aqua"
         android:centerColor="@color/darkTurquoise"

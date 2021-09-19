@@ -29,6 +29,7 @@ private boolean confere2, confere3, unidadeMh, orient2, orient3, tipo;
         togInfo = (ToggleButton) findViewById(R.id.togInfo);
         togInfo.setOnCheckedChangeListener(this);
 
+        //busca o valor booleano do toggle butoon, opção padrão desligado(false)
         togInfo.setChecked(sharedPrefs.getBoolean("Informacao",false));
 
         //Grupo Coordenada
@@ -42,6 +43,7 @@ private boolean confere2, confere3, unidadeMh, orient2, orient3, tipo;
         confere2 = sharedPrefs.getBoolean("Coordenada_2", false);
         confere3 = sharedPrefs.getBoolean("Coordenada_3", false);
 
+        //testa se há alguma opção ativa, caso não, a opção rd_1 é padrão
         if(confere2 == false && confere3 == false){
             rd_1.setChecked(true);
         }
@@ -64,6 +66,7 @@ private boolean confere2, confere3, unidadeMh, orient2, orient3, tipo;
 
         unidadeMh = sharedPrefs.getBoolean("MH", false);
 
+        //testa se há alguma opção ativa, caso não, a opção rdKM é padrão
         if(unidadeMh == false){
             rdKM.setChecked(true);
         }
@@ -82,6 +85,7 @@ private boolean confere2, confere3, unidadeMh, orient2, orient3, tipo;
         orient2 = sharedPrefs.getBoolean("North", false);
         orient3 = sharedPrefs.getBoolean("Course", false);
 
+        //testa se há alguma opção ativa, caso não, a opção rdNen é padrão
         if(orient2 == false && orient3 == false){
             rdNen.setChecked(true);
         }
@@ -100,6 +104,7 @@ private boolean confere2, confere3, unidadeMh, orient2, orient3, tipo;
 
         tipo = sharedPrefs.getBoolean("Imagem", false);
 
+        //testa se há alguma opção ativa, caso não, a opção rdVetor é padrão
         if(tipo == false){
             rdVetor.setChecked(true);
         }

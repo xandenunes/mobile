@@ -2283,6 +2283,7 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id text_credito
+id text_credito1
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -2624,6 +2625,7 @@ string rd_3_txt
 string search_menu_title
 string status_bar_notification_info_overflow
 string textcredito_txt
+string togglebutton_txt
 string txtInfo_txt
 string txtOrient_txt
 string txtProgramador1_txt

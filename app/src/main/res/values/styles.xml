@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <!--- estilo do container da tela inicial-->
     <style name="ContainerComponentsMain">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">430dp</item>
         <item name="android:background">@drawable/container_components</item>
         <item name="android:layout_margin">20dp</item>
     </style>
-
+    <!--- estilo do container1 da tela configuração-->
     <style name="ContainerComponents1">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">120dp</item>
@@ -15,6 +15,7 @@
         <item name="android:layout_margin">20dp</item>
     </style>
 
+    <!--- estilo do container2 da tela configuração-->
     <style name="ContainerComponents2">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">100dp</item>
@@ -22,6 +23,7 @@
         <item name="android:layout_margin">20dp</item>
     </style>
 
+    <!--- estilo do container3 da tela configuração-->
     <style name="ContainerComponents3">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">120dp</item>
@@ -29,6 +31,7 @@
         <item name="android:layout_margin">20dp</item>
     </style>
 
+    <!--- estilo do container4 da tela configuração-->
     <style name="ContainerComponents4">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">100dp</item>
@@ -36,6 +39,7 @@
         <item name="android:layout_margin">20dp</item>
     </style>
 
+    <!--- estilo do container5 da tela configuração-->
     <style name="ContainerComponents5">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">50dp</item>
@@ -43,13 +47,15 @@
         <item name="android:layout_margin">20dp</item>
     </style>
 
+    <!--- estilo do container1 da tela crédito-->
     <style name="ContainerComponentsCred1">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_height">120dp</item>
         <item name="android:background">@drawable/container_components</item>
         <item name="android:layout_margin">20dp</item>
     </style>
 
+    <!--- estilo do container2 da tela crédito-->
     <style name="ContainerComponentsCred2">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">300dp</item>
@@ -57,7 +63,7 @@
         <item name="android:layout_margin">20dp</item>
     </style>
 
-
+    <!--- estilo do botão da tela inicial-->
     <style name="Button">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>

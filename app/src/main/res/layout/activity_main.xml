@@ -7,6 +7,7 @@
     android:background="@drawable/fundo"
     tools:context=".MainActivity">
 
+    <!---imagem logo-->
     <ImageView
         android:id="@+id/logo"
         android:layout_width="190dp"
@@ -19,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-
+    <!---container-->
     <View
         android:id="@+id/containerComponents"
         style="@style/ContainerComponentsMain"
@@ -29,6 +30,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/logo" />
 
+    <!---botões-->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_nav"
         style="@style/Button"
