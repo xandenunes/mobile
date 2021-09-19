@@ -116,6 +116,14 @@
         "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_switchtracker.xml.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\drawable\\switchtracker.xml"
+    },
+    {
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_switchbutton.xml.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\drawable\\switchbutton.xml"
+    },
+    {
         "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_config.xml.flat",
         "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\drawable\\ic_config.xml"
     },

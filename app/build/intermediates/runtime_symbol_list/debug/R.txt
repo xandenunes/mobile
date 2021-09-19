@@ -1833,6 +1833,8 @@ int drawable notification_template_icon_bg 0x7f070092
 int drawable notification_template_icon_low_bg 0x7f070093
 int drawable notification_tile_bg 0x7f070094
 int drawable notify_panel_notification_icon_bg 0x7f070095
+int drawable switchbutton 0x7f070099
+int drawable switchtracker 0x7f07009a
 int drawable test_custom_background 0x7f070096
 int drawable tooltip_frame_dark 0x7f070097
 int drawable tooltip_frame_light 0x7f070098
@@ -2645,6 +2647,7 @@ int style Animation_AppCompat_DropDownUp 0x7f0f0004
 int style Animation_AppCompat_Tooltip 0x7f0f0005
 int style Animation_Design_BottomSheetDialog 0x7f0f0006
 int style Animation_MaterialComponents_BottomSheetDialog 0x7f0f0007
+int style AppTheme 0x7f0f02db
 int style Base_AlertDialog_AppCompat 0x7f0f0008
 int style Base_AlertDialog_AppCompat_Light 0x7f0f0009
 int style Base_Animation_AppCompat_Dialog 0x7f0f000a

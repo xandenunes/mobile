@@ -245,11 +245,13 @@
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/switchInfo"
+        android:thumb="@drawable/switchbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="@id/containerComponents5"
         app:layout_constraintStart_toEndOf="@id/txtInfo"
         app:layout_constraintTop_toTopOf="@id/containerComponents5"
+        app:track="@drawable/switchtracker"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
