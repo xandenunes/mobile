@@ -12,12 +12,12 @@
         "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_logo.png.flat",
-        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\drawable\\logo.png"
-    },
-    {
         "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_naveg.xml.flat",
         "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\drawable\\ic_naveg.xml"
+    },
+    {
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_logo.png.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\drawable\\logo.png"
     },
     {
         "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_fundo.xml.flat",
@@ -104,8 +104,8 @@
         "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_icone.png.flat",
-        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\drawable\\icone.png"
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_tets.xml.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\drawable\\ic_tets.xml"
     },
     {
         "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",

@@ -1,8 +1,8 @@
+com/example/projeto/BuildConfig.java
+ com.example.projeto.BuildConfig
 com/example/projeto/Configuracao.java
  com.example.projeto.Configuracao
 com/example/projeto/Credito.java
  com.example.projeto.Credito
 com/example/projeto/MainActivity.java
  com.example.projeto.MainActivity
-com/example/projeto/BuildConfig.java
- com.example.projeto.BuildConfig

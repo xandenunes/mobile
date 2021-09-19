@@ -51,8 +51,9 @@
         android:id="@+id/txtformato"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="10dp"
         android:text="@string/txtformato"
+        android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/containerComponents1"
@@ -62,8 +63,8 @@
 
     <RadioGroup
         android:id="@+id/formatgroup"
-        android:layout_width="190dp"
-        android:layout_height="95dp"
+        android:layout_width="182dp"
+        android:layout_height="90dp"
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="@id/containerComponents1"
         app:layout_constraintStart_toEndOf="@id/txtformato"
@@ -74,19 +75,23 @@
             android:id="@+id/rd_1"
             android:layout_width="match_parent"
             android:layout_height="32dp"
+            android:textColor="@color/black"
             android:text="@string/rd_1_txt" />
 
         <RadioButton
             android:id="@+id/rd_2"
             android:layout_width="match_parent"
             android:layout_height="29dp"
+            android:textColor="@color/black"
             android:text="@string/rd_2_txt" />
 
         <RadioButton
             android:id="@+id/rd_3"
             android:layout_width="match_parent"
             android:layout_height="36dp"
-            android:text="@string/rd_3_txt" />
+            android:text="@string/rd_3_txt"
+            android:textColor="@color/black"
+            />
     </RadioGroup>
 
     <TextView
@@ -94,6 +99,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
         android:text="@string/txtunidade_txt"
@@ -114,12 +120,14 @@
             android:id="@+id/rdKM"
             android:layout_width="match_parent"
             android:layout_height="34dp"
+            android:textColor="@color/black"
             android:text="@string/rdKM_txt" />
 
         <RadioButton
             android:id="@+id/rdMH"
             android:layout_width="match_parent"
             android:layout_height="31dp"
+            android:textColor="@color/black"
             android:text="@string/rdMH_txt" />
     </RadioGroup>
 
@@ -130,6 +138,7 @@
         android:layout_marginStart="16dp"
         android:textSize="16sp"
         android:textStyle="bold"
+        android:textColor="@color/black"
         android:text="@string/txtOrient_txt"
         app:layout_constraintBottom_toBottomOf="@id/containerComponents3"
         app:layout_constraintStart_toStartOf="@id/containerComponents3"
@@ -148,18 +157,21 @@
             android:id="@+id/rdNen"
             android:layout_width="match_parent"
             android:layout_height="32dp"
+            android:textColor="@color/black"
             android:text="@string/rdNen_txt" />
 
         <RadioButton
             android:id="@+id/rdNorth"
             android:layout_width="match_parent"
             android:layout_height="35dp"
+            android:textColor="@color/black"
             android:text="@string/rdNorth_txt" />
 
         <RadioButton
             android:id="@+id/rdCourse"
             android:layout_width="match_parent"
             android:layout_height="34dp"
+            android:textColor="@color/black"
             android:text="@string/rdCourse_txt" />
 
     </RadioGroup>
@@ -171,6 +183,7 @@
         android:layout_marginStart="16dp"
         android:textSize="16sp"
         android:textStyle="bold"
+        android:textColor="@color/black"
         android:text="@string/txtTipo_txt"
         app:layout_constraintBottom_toBottomOf="@id/containerComponents4"
         app:layout_constraintStart_toStartOf="@id/containerComponents4"
@@ -189,12 +202,14 @@
             android:id="@+id/rdVetor"
             android:layout_width="match_parent"
             android:layout_height="31dp"
+            android:textColor="@color/black"
             android:text="@string/rdVetor_txt" />
 
         <RadioButton
             android:id="@+id/rdImg"
             android:layout_width="match_parent"
             android:layout_height="34dp"
+            android:textColor="@color/black"
             android:text="@string/rdImg_txt" />
     </RadioGroup>
 
@@ -205,6 +220,7 @@
         android:layout_marginStart="16dp"
         android:textSize="16sp"
         android:textStyle="bold"
+        android:textColor="@color/black"
         android:text="@string/txtInfo_txt"
         app:layout_constraintBottom_toBottomOf="@id/containerComponents5"
         app:layout_constraintStart_toStartOf="@id/containerComponents5"
