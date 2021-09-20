@@ -35,7 +35,7 @@ private long mLastClickTime = 0;
     @Override
     public void onClick(View view) {
         //evita que o usuário dê double click
-        if(SystemClock.elapsedRealtime() - mLastClickTime < 1000){
+        if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
             return;
         }
         mLastClickTime = SystemClock.elapsedRealtime();

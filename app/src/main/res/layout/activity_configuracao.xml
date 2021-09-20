@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.core.widget.NestedScrollView
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -19,14 +18,14 @@
         android:id="@+id/txtTituloConfig"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
         android:text="@string/txtTituloConfig"
         android:textColor="@color/white"
-        android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TextContrastCheck" />
+        android:textSize="40sp"
+        android:layout_marginTop="100dp"
+        />
 
     <View
         android:id="@+id/containerComponents1"
@@ -81,12 +80,13 @@
         android:id="@+id/formatgroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="5dp"
+        android:layout_marginEnd="10dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="@id/containerComponents1"
         app:layout_constraintStart_toStartOf="@id/containerComponents1"
         app:layout_constraintTop_toBottomOf="@id/txtformato"
-        app:layout_constraintBottom_toBottomOf="@id/containerComponents1">
+        app:layout_constraintBottom_toBottomOf="@id/containerComponents1"
+        >
 
 
         <RadioButton
