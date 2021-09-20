@@ -28,6 +28,7 @@ private boolean confere2, confere3, unidadeMh, orient2, orient3, tipo;
         //Info
         switchInfo = (SwitchCompat) findViewById(R.id.switchInfo);
         switchInfo.setOnCheckedChangeListener(this);
+
         switchInfo.setChecked(sharedPrefs.getBoolean("Informacao",false));
 
         //Grupo Coordenada

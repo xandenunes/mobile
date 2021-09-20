@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.core.widget.NestedScrollView
+<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fundo"
@@ -25,7 +24,9 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="ImageContrastCheck"
+        android:contentDescription="@string/app_name" />
 
     <!---container-->
     <View
@@ -41,52 +42,52 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_nav"
         style="@style/Button"
+        android:drawableEnd="@drawable/ic_naveg"
         android:text="@string/nav_txt"
-        android:drawableRight="@drawable/ic_naveg"
-        app:layout_constraintStart_toStartOf="@id/containerComponents"
         app:layout_constraintEnd_toEndOf="@id/containerComponents"
+        app:layout_constraintStart_toStartOf="@id/containerComponents"
         app:layout_constraintTop_toTopOf="@id/containerComponents"
-        />
+        tools:ignore="TextContrastCheck,TextContrastCheck" />
 
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_config"
         style="@style/Button"
+        android:drawableEnd="@drawable/ic_config"
         android:text="@string/config_txt"
-        android:drawableRight="@drawable/ic_config"
-        app:layout_constraintStart_toStartOf="@id/containerComponents"
         app:layout_constraintEnd_toEndOf="@id/containerComponents"
+        app:layout_constraintStart_toStartOf="@id/containerComponents"
         app:layout_constraintTop_toBottomOf="@id/button_nav"
-        />
+        tools:ignore="TextContrastCheck" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_gnss"
         style="@style/Button"
+        android:drawableEnd="@drawable/ic_gnss"
         android:text="@string/gnss_txt"
-        android:drawableRight="@drawable/ic_gnss"
-        app:layout_constraintStart_toStartOf="@id/containerComponents"
         app:layout_constraintEnd_toEndOf="@id/containerComponents"
+        app:layout_constraintStart_toStartOf="@id/containerComponents"
         app:layout_constraintTop_toBottomOf="@id/button_config"
-        />
+        tools:ignore="TextContrastCheck" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_histo"
         style="@style/Button"
+        android:drawableEnd="@drawable/ic_historic"
         android:text="@string/histo_txt"
-        android:drawableRight="@drawable/ic_historic"
-        app:layout_constraintStart_toStartOf="@id/containerComponents"
         app:layout_constraintEnd_toEndOf="@id/containerComponents"
+        app:layout_constraintStart_toStartOf="@id/containerComponents"
         app:layout_constraintTop_toBottomOf="@id/button_gnss"
-        />
+        tools:ignore="TextContrastCheck" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_credito"
         style="@style/Button"
+        android:drawableEnd="@drawable/ic_creditos"
         android:text="@string/credito_txt"
-        android:drawableRight="@drawable/ic_creditos"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/containerComponents"
+        app:layout_constraintStart_toStartOf="@id/containerComponents"
         app:layout_constraintTop_toBottomOf="@id/button_histo"
-        />
+        tools:ignore="TextContrastCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

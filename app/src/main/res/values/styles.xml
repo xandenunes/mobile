@@ -8,6 +8,7 @@
         <item name="android:background">@drawable/container_components</item>
         <item name="android:layout_margin">20dp</item>
     </style>
+
     <!--- estilo do container1 da tela configuração-->
     <style name="ContainerComponents1">
         <item name="android:layout_width">match_parent</item>
@@ -87,9 +88,5 @@
         <item name="android:textStyle">bold</item>
         <item name="android:background">@drawable/buttonshape</item>
     </style>
-
-
-
-
 </resources>
 

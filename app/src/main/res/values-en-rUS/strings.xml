@@ -17,7 +17,7 @@
     <string name="rdNen_txt">None</string>
     <string name="rdCourse_txt">Course up</string>
     <string name="rdNorth_txt">North up</string>
-    <string name="txtTipo_txt">Map type</string>
+    <string name="txtTipo_txt">" Map type"</string>
     <string name="rdVetor_txt">"Vector "</string>
     <string name="rdImg_txt">"Satellite Image "</string>
     <string name="txtInfo_txt">Traffic information</string>
