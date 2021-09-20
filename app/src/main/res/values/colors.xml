@@ -13,4 +13,5 @@
     <color name="darkTurquoise">#00CED1</color>
     <color name="turquoise">#40E0D0</color>
     <color name="aquamarine">#7FFFD4</color>
+    <color name="gainsboro">#DCDCDC</color>
 </resources>

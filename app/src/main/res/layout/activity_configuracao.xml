@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.core.widget.NestedScrollView
+<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
@@ -8,25 +9,34 @@
 
 
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fundo"
     tools:context=".Configuracao">
 
+    <TextView
+        android:id="@+id/txtTituloConfig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtTituloConfig"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="40sp"
+        android:layout_marginTop="100dp"
+        />
+
     <View
         android:id="@+id/containerComponents1"
         style="@style/ContainerComponents1"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/txtTituloConfig" />
 
     <View
         android:id="@+id/containerComponents2"
         style="@style/ContainerComponents2"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/containerComponents1" />
@@ -34,7 +44,6 @@
     <View
         android:id="@+id/containerComponents3"
         style="@style/ContainerComponents3"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/containerComponents2" />
@@ -42,7 +51,6 @@
     <View
         android:id="@+id/containerComponents4"
         style="@style/ContainerComponents4"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/containerComponents3" />
@@ -50,7 +58,6 @@
     <View
         android:id="@+id/containerComponents5"
         style="@style/ContainerComponents5"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/containerComponents4" />
@@ -59,30 +66,33 @@
         android:id="@+id/txtformato"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
         android:text="@string/txtformato"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/containerComponents1"
         app:layout_constraintStart_toStartOf="@id/containerComponents1"
         app:layout_constraintTop_toTopOf="@id/containerComponents1"
         />
 
     <RadioGroup
         android:id="@+id/formatgroup"
-        android:layout_width="182dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="@id/containerComponents1"
-        app:layout_constraintStart_toEndOf="@id/txtformato"
-        app:layout_constraintTop_toTopOf="@id/containerComponents1">
+        app:layout_constraintStart_toStartOf="@id/containerComponents1"
+        app:layout_constraintTop_toBottomOf="@id/txtformato"
+        app:layout_constraintBottom_toBottomOf="@id/containerComponents1"
+        >
 
 
         <RadioButton
             android:id="@+id/rd_1"
             android:layout_width="match_parent"
-            android:layout_height="32dp"
+            android:layout_height="22dp"
             android:text="@string/rd_1_txt"
             android:textColor="@color/black"
             tools:ignore="TouchTargetSizeCheck" />
@@ -90,7 +100,7 @@
         <RadioButton
             android:id="@+id/rd_2"
             android:layout_width="match_parent"
-            android:layout_height="29dp"
+            android:layout_height="30dp"
             android:text="@string/rd_2_txt"
             android:textColor="@color/black"
             tools:ignore="TouchTargetSizeCheck" />
@@ -98,7 +108,7 @@
         <RadioButton
             android:id="@+id/rd_3"
             android:layout_width="match_parent"
-            android:layout_height="36dp"
+            android:layout_height="32dp"
             android:text="@string/rd_3_txt"
             android:textColor="@color/black"
             tools:ignore="TouchTargetSizeCheck" />
@@ -108,23 +118,24 @@
         android:id="@+id/txtunidade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="15dp"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:text="@string/txtunidade_txt"
-        app:layout_constraintBottom_toBottomOf="@id/containerComponents2"
         app:layout_constraintStart_toStartOf="@id/containerComponents2"
         app:layout_constraintTop_toTopOf="@id/containerComponents2" />
 
     <RadioGroup
         android:id="@+id/unidadeGroup"
-        android:layout_width="138dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="@id/containerComponents2"
-        app:layout_constraintStart_toEndOf="@id/txtunidade"
-        app:layout_constraintTop_toTopOf="@id/containerComponents2">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@id/containerComponents2"
+        app:layout_constraintTop_toBottomOf="@id/txtunidade"
+        app:layout_constraintBottom_toBottomOf="@id/containerComponents2">
 
         <RadioButton
             android:id="@+id/rdKM"
@@ -147,23 +158,24 @@
         android:id="@+id/txtOrient"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:textSize="16sp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="15dp"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="@color/black"
         android:text="@string/txtOrient_txt"
-        app:layout_constraintBottom_toBottomOf="@id/containerComponents3"
         app:layout_constraintStart_toStartOf="@id/containerComponents3"
         app:layout_constraintTop_toTopOf="@id/containerComponents3" />
 
     <RadioGroup
         android:id="@+id/orientGroup"
-        android:layout_width="156dp"
-        android:layout_height="102dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="@id/containerComponents3"
-        app:layout_constraintStart_toEndOf="@id/txtOrient"
-        app:layout_constraintTop_toTopOf="@id/containerComponents3">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toStartOf="@id/containerComponents3"
+        app:layout_constraintTop_toBottomOf="@id/txtOrient"
+        app:layout_constraintBottom_toBottomOf="@id/containerComponents3">
 
         <RadioButton
             android:id="@+id/rdNen"
@@ -195,23 +207,24 @@
         android:id="@+id/txtTipo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="15dp"
         android:textSize="16sp"
         android:textStyle="bold"
         android:textColor="@color/black"
         android:text="@string/txtTipo_txt"
-        app:layout_constraintBottom_toBottomOf="@id/containerComponents4"
         app:layout_constraintStart_toStartOf="@id/containerComponents4"
-        app:layout_constraintTop_toTopOf="@id/containerComponents4" />
+        app:layout_constraintTop_toTopOf="@id/containerComponents4"  />
 
     <RadioGroup
         android:id="@+id/tipoGroup"
-        android:layout_width="163dp"
-        android:layout_height="67dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="@id/containerComponents4"
-        app:layout_constraintStart_toEndOf="@id/txtTipo"
-        app:layout_constraintTop_toTopOf="@id/containerComponents4">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toStartOf="@id/containerComponents4"
+        app:layout_constraintTop_toBottomOf="@id/txtTipo"
+        app:layout_constraintBottom_toBottomOf="@id/containerComponents4">
 
         <RadioButton
             android:id="@+id/rdVetor"

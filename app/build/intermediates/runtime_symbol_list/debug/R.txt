@@ -1146,6 +1146,7 @@ int color error_color_material_dark 0x7f05005c
 int color error_color_material_light 0x7f05005d
 int color foreground_material_dark 0x7f05005e
 int color foreground_material_light 0x7f05005f
+int color gainsboro 0x7f0500da
 int color highlighted_text_material_dark 0x7f050060
 int color highlighted_text_material_light 0x7f050061
 int color material_blue_grey_800 0x7f050062
@@ -2321,6 +2322,7 @@ int id txtProgramador3 0x7f0801de
 int id txtProgramador4 0x7f0801df
 int id txtProgramador5 0x7f0801e0
 int id txtTipo 0x7f0801e1
+int id txtTituloConfig 0x7f0801fe
 int id txtTituloProg 0x7f0801e2
 int id txtformato 0x7f0801e3
 int id txtunidade 0x7f0801e4
@@ -2627,7 +2629,6 @@ int string rd_3_txt 0x7f0e0075
 int string search_menu_title 0x7f0e0076
 int string status_bar_notification_info_overflow 0x7f0e0077
 int string textcredito_txt 0x7f0e0078
-int string togglebutton_txt 0x7f0e0085
 int string txtInfo_txt 0x7f0e0079
 int string txtOrient_txt 0x7f0e007a
 int string txtProgramador1_txt 0x7f0e007b
@@ -2636,6 +2637,7 @@ int string txtProgramador3_txt 0x7f0e007d
 int string txtProgramador4_txt 0x7f0e007e
 int string txtProgramador5_txt 0x7f0e007f
 int string txtTipo_txt 0x7f0e0080
+int string txtTituloConfig 0x7f0e0086
 int string txtTituloProg 0x7f0e0081
 int string txt_titleCred 0x7f0e0082
 int string txtformato 0x7f0e0083

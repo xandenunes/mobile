@@ -1147,6 +1147,7 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color gainsboro
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color material_blue_grey_800
@@ -2322,6 +2323,7 @@ id txtProgramador3
 id txtProgramador4
 id txtProgramador5
 id txtTipo
+id txtTituloConfig
 id txtTituloProg
 id txtformato
 id txtunidade
@@ -2628,7 +2630,6 @@ string rd_3_txt
 string search_menu_title
 string status_bar_notification_info_overflow
 string textcredito_txt
-string togglebutton_txt
 string txtInfo_txt
 string txtOrient_txt
 string txtProgramador1_txt
@@ -2637,6 +2638,7 @@ string txtProgramador3_txt
 string txtProgramador4_txt
 string txtProgramador5_txt
 string txtTipo_txt
+string txtTituloConfig
 string txtTituloProg
 string txt_titleCred
 string txtformato

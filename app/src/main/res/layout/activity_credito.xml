@@ -18,7 +18,6 @@
     <View
         android:id="@+id/containerComponentsCred1"
         style="@style/ContainerComponentsCred1"
-
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +26,6 @@
     <View
         android:id="@+id/containerComponentsCred2"
         style="@style/ContainerComponentsCred2"
-
         android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,10 +40,10 @@
         android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/containerComponentsCred1"
+        android:layout_marginTop="15dp"
         app:layout_constraintStart_toStartOf="@id/containerComponentsCred1"
         app:layout_constraintTop_toTopOf="@id/containerComponentsCred1"
-        app:layout_constraintVertical_bias="0.102" />
+        />
 
     <TextView
         android:id="@+id/text_credito"
@@ -55,9 +53,10 @@
         android:layout_marginStart="16dp"
         android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@id/containerComponentsCred1"
+        android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="@id/containerComponentsCred1"
-        app:layout_constraintTop_toTopOf="@id/text_title" />
+        app:layout_constraintTop_toBottomOf="@id/text_title"
+        />
 
 
     <TextView
@@ -68,10 +67,10 @@
         android:text="@string/textcredito_txt"
         android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@id/containerComponentsCred1"
+        android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="@id/containerComponentsCred1"
-        app:layout_constraintTop_toTopOf="@id/text_credito"
-        app:layout_constraintVertical_bias="0.709" />
+        app:layout_constraintTop_toBottomOf="@id/text_credito"
+        />
 
     <TextView
         android:id="@+id/txtTituloProg"
@@ -82,7 +81,7 @@
         android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/containerComponentsCred2"
+        android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="@id/containerComponentsCred2"
         app:layout_constraintTop_toTopOf="@id/containerComponentsCred2"
         app:layout_constraintVertical_bias="0.107" />
@@ -96,10 +95,10 @@
         android:text="@string/txtProgramador1_txt"
         android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@id/containerComponentsCred2"
+        android:layout_marginTop="15dp"
         app:layout_constraintStart_toStartOf="@id/containerComponentsCred2"
-        app:layout_constraintTop_toTopOf="@id/txtTituloProg"
-        app:layout_constraintVertical_bias="0.200" />
+        app:layout_constraintTop_toBottomOf="@id/txtTituloProg"
+        />
 
     <TextView
         android:id="@+id/txtProgramador2"
@@ -110,10 +109,10 @@
         android:textColor="@color/black"
         android:text="@string/txtProgramador2_txt"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@id/containerComponentsCred2"
+        android:layout_marginTop="15dp"
         app:layout_constraintStart_toStartOf="@id/containerComponentsCred2"
-        app:layout_constraintTop_toTopOf="@id/txtProgramador1"
-        app:layout_constraintVertical_bias="0.200" />
+        app:layout_constraintTop_toBottomOf="@id/txtProgramador1"
+        />
 
     <TextView
         android:id="@+id/txtProgramador3"
@@ -124,10 +123,10 @@
         android:drawableLeft="@drawable/ic_tets"
         android:text="@string/txtProgramador3_txt"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@id/containerComponentsCred2"
+        android:layout_marginTop="15dp"
         app:layout_constraintStart_toStartOf="@id/containerComponentsCred2"
-        app:layout_constraintTop_toTopOf="@id/txtProgramador2"
-        app:layout_constraintVertical_bias="0.200" />
+        app:layout_constraintTop_toBottomOf="@id/txtProgramador2"
+        />
 
     <TextView
         android:id="@+id/txtProgramador4"
@@ -138,10 +137,10 @@
         android:textColor="@color/black"
         android:text="@string/txtProgramador4_txt"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@id/containerComponentsCred2"
+        android:layout_marginTop="15dp"
         app:layout_constraintStart_toStartOf="@id/containerComponentsCred2"
-        app:layout_constraintTop_toTopOf="@id/txtProgramador3"
-        app:layout_constraintVertical_bias="0.314" />
+        app:layout_constraintTop_toBottomOf="@id/txtProgramador3"
+        />
 
     <TextView
         android:id="@+id/txtProgramador5"
@@ -152,10 +151,10 @@
         android:textColor="@color/black"
         android:text="@string/txtProgramador5_txt"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@id/containerComponentsCred2"
+        android:layout_marginTop="15dp"
         app:layout_constraintStart_toStartOf="@id/containerComponentsCred2"
-        app:layout_constraintTop_toTopOf="@id/txtProgramador4"
-        app:layout_constraintVertical_bias="0.448" />
+        app:layout_constraintTop_toBottomOf="@id/txtProgramador4"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,13 +13,10 @@
     <!--- customiza a barra quando desligado-->
     <item android:state_checked="false">
         <shape android:shape="rectangle">
-            <solid android:color="#cdcdcd"/>
+            <solid android:color="@color/gainsboro"/>
             <corners android:radius="200dp"/>
             <stroke android:width="2dp"
                 android:color="@color/darkTurquoise"/>
         </shape>
     </item>
-
-
-
 </selector>

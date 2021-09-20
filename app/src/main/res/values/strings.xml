@@ -28,5 +28,5 @@
     <string name="txt_titleCred">Sobre</string>
     <string name="txtProgramador4_txt">Matheus Filipe Chaves da Cruz</string>
     <string name="txtProgramador5_txt">Alexandre Nunes Brito</string>
-    <string name="togglebutton_txt">Ligado</string>
+    <string name="txtTituloConfig">Config.</string>
 </resources>
