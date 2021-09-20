@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.core.widget.NestedScrollView
+<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fundo"
@@ -30,6 +29,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/containerComponentsCred1" />
+
+    <View
+        android:id="@+id/containerComponentsCred3"
+        style="@style/ContainerComponentsCred3"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/containerComponentsCred2"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/text_title"
@@ -154,6 +163,46 @@
         android:layout_marginTop="15dp"
         app:layout_constraintStart_toStartOf="@id/containerComponentsCred2"
         app:layout_constraintTop_toBottomOf="@id/txtProgramador4"
+        />
+
+    <TextView
+        android:id="@+id/textSist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/txtSist"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="@id/containerComponentsCred3"
+        app:layout_constraintTop_toTopOf="@id/containerComponentsCred3"
+        />
+
+    <TextView
+        android:id="@+id/textSistVers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtSistVers"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@id/containerComponentsCred3"
+        app:layout_constraintTop_toBottomOf="@id/textSist"
+        />
+
+    <TextView
+        android:id="@+id/textSistTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtSistTest"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@id/containerComponentsCred3"
+        app:layout_constraintTop_toBottomOf="@id/textSistVers"
         />
 
 

@@ -29,4 +29,7 @@
     <string name="txtProgramador4_txt">Matheus Filipe Chaves da Cruz</string>
     <string name="txtProgramador5_txt">Alexandre Nunes Brito</string>
     <string name="txtTituloConfig">Config.</string>
+    <string name="txtSist">Sistema</string>
+    <string name="txtSistVers">Mínimo requerido Android 5.0(Lollipop)</string>
+    <string name="txtSistTest">Testes feitos no Android 5.0; 9.0 e 11.0</string>
 </resources>

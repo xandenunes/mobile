@@ -1978,6 +1978,7 @@ id containerComponents4
 id containerComponents5
 id containerComponentsCred1
 id containerComponentsCred2
+id containerComponentsCred3
 id content
 id contentPanel
 id contiguous
@@ -2282,6 +2283,9 @@ id test_radiobutton_app_button_tint
 id text
 id text2
 id textEnd
+id textSist
+id textSistTest
+id textSistVers
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
@@ -2637,6 +2641,9 @@ string txtProgramador2_txt
 string txtProgramador3_txt
 string txtProgramador4_txt
 string txtProgramador5_txt
+string txtSist
+string txtSistTest
+string txtSistVers
 string txtTipo_txt
 string txtTituloConfig
 string txtTituloProg
@@ -2883,6 +2890,7 @@ style ContainerComponents4
 style ContainerComponents5
 style ContainerComponentsCred1
 style ContainerComponentsCred2
+style ContainerComponentsCred3
 style ContainerComponentsMain
 style EmptyTheme
 style MaterialAlertDialog_MaterialComponents
