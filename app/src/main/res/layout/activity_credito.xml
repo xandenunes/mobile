@@ -13,7 +13,6 @@
     android:background="@drawable/fundo"
     tools:context=".Credito">
 
-
     <View
         android:id="@+id/containerComponentsCred1"
         style="@style/ContainerComponentsCred1"
@@ -100,28 +99,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:drawableLeft="@drawable/ic_tets"
         android:text="@string/txtProgramador1_txt"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:layout_marginTop="15dp"
         app:layout_constraintStart_toStartOf="@id/containerComponentsCred2"
         app:layout_constraintTop_toBottomOf="@id/txtTituloProg"
-        />
+        app:drawableLeftCompat="@drawable/ic_tets" />
 
     <TextView
         android:id="@+id/txtProgramador2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:drawableLeft="@drawable/ic_tets"
         android:textColor="@color/black"
         android:text="@string/txtProgramador2_txt"
         android:textSize="16sp"
         android:layout_marginTop="15dp"
         app:layout_constraintStart_toStartOf="@id/containerComponentsCred2"
         app:layout_constraintTop_toBottomOf="@id/txtProgramador1"
-        />
+        app:drawableLeftCompat="@drawable/ic_tets" />
 
     <TextView
         android:id="@+id/txtProgramador3"
@@ -129,41 +126,38 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:textColor="@color/black"
-        android:drawableLeft="@drawable/ic_tets"
         android:text="@string/txtProgramador3_txt"
         android:textSize="16sp"
         android:layout_marginTop="15dp"
         app:layout_constraintStart_toStartOf="@id/containerComponentsCred2"
         app:layout_constraintTop_toBottomOf="@id/txtProgramador2"
-        />
+        app:drawableLeftCompat="@drawable/ic_tets" />
 
     <TextView
         android:id="@+id/txtProgramador4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:drawableLeft="@drawable/ic_tets"
         android:textColor="@color/black"
         android:text="@string/txtProgramador4_txt"
         android:textSize="16sp"
         android:layout_marginTop="15dp"
         app:layout_constraintStart_toStartOf="@id/containerComponentsCred2"
         app:layout_constraintTop_toBottomOf="@id/txtProgramador3"
-        />
+        app:drawableLeftCompat="@drawable/ic_tets" />
 
     <TextView
         android:id="@+id/txtProgramador5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:drawableLeft="@drawable/ic_tets"
         android:textColor="@color/black"
         android:text="@string/txtProgramador5_txt"
         android:textSize="16sp"
         android:layout_marginTop="15dp"
         app:layout_constraintStart_toStartOf="@id/containerComponentsCred2"
         app:layout_constraintTop_toBottomOf="@id/txtProgramador4"
-        />
+        app:drawableLeftCompat="@drawable/ic_tets" />
 
     <TextView
         android:id="@+id/textSist"

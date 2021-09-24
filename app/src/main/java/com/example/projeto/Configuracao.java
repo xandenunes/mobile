@@ -28,6 +28,7 @@ private boolean confere2, confere3, unidadeMh, orient2, orient3, tipo;
         //Info
         switchInfo = (SwitchCompat) findViewById(R.id.switchInfo);
         switchInfo.setOnCheckedChangeListener(this);
+
         switchInfo.setChecked(sharedPrefs.getBoolean("Informacao",false));
 
         //Grupo Coordenada
@@ -113,44 +114,6 @@ private boolean confere2, confere3, unidadeMh, orient2, orient3, tipo;
 
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        /*
-        if(buttonView.getId()==R.id.switchInfo && buttonView.isChecked())
-            Toast.makeText(this, "Você escolheu Ligado", Toast.LENGTH_SHORT).show();
-
-        //Grupo Coordenada
-        if(buttonView.getId()==R.id.rd_1 && buttonView.isChecked())
-            Toast.makeText(this, "Você escolheu DDDºDDDDD", Toast.LENGTH_SHORT).show();
-
-        if(buttonView.getId()==R.id.rd_2 && buttonView.isChecked())
-            Toast.makeText(this, "Você escolheu DDDº MM.MMM", Toast.LENGTH_SHORT).show();
-
-        if(buttonView.getId()==R.id.rd_3 && buttonView.isChecked())
-            Toast.makeText(this, "Você escolheu DDDº MM' SS", Toast.LENGTH_SHORT).show();
-
-        //Grupo Unidade
-        if(buttonView.getId()==R.id.rdKM && buttonView.isChecked())
-            Toast.makeText(this, "Você escolheu KM/h", Toast.LENGTH_SHORT).show();
-
-        if(buttonView.getId()==R.id.rdMH && buttonView.isChecked())
-            Toast.makeText(this, "Você escolheu Mph", Toast.LENGTH_SHORT).show();
-
-        //Grupo Orientação
-        if(buttonView.getId()==R.id.rdNen && buttonView.isChecked())
-            Toast.makeText(this, "Você escolheu Nenhuma", Toast.LENGTH_SHORT).show();
-
-        if(buttonView.getId()==R.id.rdNorth && buttonView.isChecked())
-            Toast.makeText(this, "Você escolheu North", Toast.LENGTH_SHORT).show();
-
-        if(buttonView.getId()==R.id.rdCourse && buttonView.isChecked())
-            Toast.makeText(this, "Você escolheu Course", Toast.LENGTH_SHORT).show();
-
-        //Grupo Tipo
-        if(buttonView.getId()==R.id.rdVetor && buttonView.isChecked())
-            Toast.makeText(this, "Você escolheu Vetorial", Toast.LENGTH_SHORT).show();
-
-        if(buttonView.getId()==R.id.rdImg && buttonView.isChecked())
-            Toast.makeText(this, "Você escolheu Imagem de Satélite", Toast.LENGTH_SHORT).show();
-         */
     }
 
     @Override
