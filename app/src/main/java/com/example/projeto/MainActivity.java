@@ -1,14 +1,22 @@
 package com.example.projeto;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
 private long mLastClickTime = 0;
@@ -30,6 +38,27 @@ private long mLastClickTime = 0;
         button_histo.setOnClickListener(this);
         button_credito.setOnClickListener(this);
 
+
+    }
+    @Override
+    public void onResume(){
+        super.onResume();
+        //Testar se o Play services não está desativado ou desatualizado
+        int erro = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(this);
+        switch (erro){
+            case ConnectionResult.SERVICE_MISSING:
+            case ConnectionResult.SERVICE_VERSION_UPDATE_REQUIRED:
+            case ConnectionResult.SERVICE_DISABLED:
+                GoogleApiAvailability.getInstance().getErrorDialog(this, erro,
+                        0, new DialogInterface.OnCancelListener(){
+                            @Override
+                            public void onCancel(DialogInterface dialogInterface) {
+                                finish();
+                            }
+                        }).show();
+                break;
+            case ConnectionResult.SUCCESS:
+        }
     }
 
     @Override
@@ -42,7 +71,8 @@ private long mLastClickTime = 0;
 
         switch(view.getId()){
            case R.id.button_nav:
-
+                   Intent m = new Intent(this,MapsActivity.class);
+                   startActivity(m);
                break;
 
            case R.id.button_gnss:
@@ -55,8 +85,8 @@ private long mLastClickTime = 0;
                 break;
 
            case R.id.button_histo:
-
-
+               Intent h = new Intent(this, Historico.class);
+               startActivity(h);
                break;
 
            case R.id.button_credito:

@@ -32,4 +32,9 @@
     <string name="txtSist">Sistema</string>
     <string name="txtSistVers">Mínimo requerido Android 5.0(Lollipop)</string>
     <string name="txtSistTest">Testes feitos no Android 5.0; 9.0 e 11.0</string>
+    <string name="title_activity_maps" translatable="false">MapsActivity</string>
+    <string name="title_activity_historico" translatable="false">Historico</string>
+    <string name="tituloLongitude">Longitude:</string>
+    <string name="tituloLatitude">Latitude:</string>
+    <string name="tituloVelocidade">Velocidade:</string>
 </resources>

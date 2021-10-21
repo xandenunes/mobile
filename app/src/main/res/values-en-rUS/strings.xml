@@ -33,4 +33,7 @@
     <string name="txtSist">System</string>
     <string name="txtSistVers">Minimum required Android 5.0(Lollipop)</string>
     <string name="txtSistTest">Tests made on Android 5.0; 9.0 and 11.0</string>
+    <string name="tituloLatitude">Latitude:</string>
+    <string name="tituloLongitude">Longitude:</string>
+    <string name="tituloVelocidade">" Velocity:"</string>
 </resources>

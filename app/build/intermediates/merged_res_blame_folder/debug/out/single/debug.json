@@ -12,12 +12,12 @@
         "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_logo.png.flat",
-        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\drawable\\logo.png"
-    },
-    {
         "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_naveg.xml.flat",
         "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\drawable\\ic_naveg.xml"
+    },
+    {
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_logo.png.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\drawable\\logo.png"
     },
     {
         "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_fundo.xml.flat",
@@ -88,12 +88,20 @@
         "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\drawable\\container_components.xml"
     },
     {
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_historico.xml.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\layout\\activity_historico.xml"
+    },
+    {
         "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_historic.xml.flat",
         "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\drawable\\ic_historic.xml"
     },
     {
         "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_foreground.png.flat",
         "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_maps.xml.flat",
+        "source": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\src\\main\\res\\layout\\activity_maps.xml"
     },
     {
         "merged": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_launcher_background.xml.flat",

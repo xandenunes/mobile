@@ -1,5 +1,7 @@
 package com.example.projeto;
 
+import static com.example.projeto.MapsActivity.mudaMapa;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
@@ -16,7 +18,7 @@ private SharedPreferences sharedPrefs;
 private SharedPreferences.Editor sharedPrefsEditor;
 private RadioButton rd_1, rd_2, rd_3, rdKM, rdMH,rdNen, rdNorth, rdCourse, rdVetor, rdImg;
 private SwitchCompat switchInfo;
-private boolean confere2, confere3, unidadeMh, orient2, orient3, tipo;
+private boolean Coordenada2, Coordenada3, unidadeMh, orient2, orient3, tipo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,19 +41,19 @@ private boolean confere2, confere3, unidadeMh, orient2, orient3, tipo;
         rd_2.setOnCheckedChangeListener(this);
         rd_3.setOnCheckedChangeListener(this);
 
-        confere2 = sharedPrefs.getBoolean("Coordenada_2", false);
-        confere3 = sharedPrefs.getBoolean("Coordenada_3", false);
+        Coordenada2 = sharedPrefs.getBoolean("Coordenada_2", false);
+        Coordenada3 = sharedPrefs.getBoolean("Coordenada3", false);
 
         //testa se há alguma opção ativa, caso não, a opção rd_1 é padrão
-        if(confere2 == false && confere3 == false){
+        if(Coordenada2 == false && Coordenada3 == false){
             rd_1.setChecked(true);
         }
 
-        if(confere2 == true){
+        if(Coordenada2 == true){
             rd_2.setChecked(true);
         }
 
-        if(confere3 == true){
+        if(Coordenada3 == true){
             rd_3.setChecked(true);
         }
 

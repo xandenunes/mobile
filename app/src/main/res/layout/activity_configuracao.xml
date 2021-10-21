@@ -267,6 +267,5 @@
         app:layout_constraintTop_toTopOf="@id/containerComponents5"
         app:track="@drawable/switchtracker"
         />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
