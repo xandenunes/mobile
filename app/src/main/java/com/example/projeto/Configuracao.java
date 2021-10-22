@@ -42,7 +42,7 @@ private boolean Coordenada2, Coordenada3, unidadeMh, orient2, orient3, tipo;
         rd_3.setOnCheckedChangeListener(this);
 
         Coordenada2 = sharedPrefs.getBoolean("Coordenada_2", false);
-        Coordenada3 = sharedPrefs.getBoolean("Coordenada3", false);
+        Coordenada3 = sharedPrefs.getBoolean("Coordenada_3", false);
 
         //testa se há alguma opção ativa, caso não, a opção rd_1 é padrão
         if(Coordenada2 == false && Coordenada3 == false){

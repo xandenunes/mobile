@@ -1864,7 +1864,6 @@ drawable ic_mtrl_chip_close_circle
 drawable ic_naveg
 drawable ic_tets
 drawable logo
-drawable makerlocation
 drawable makerlocation_icon
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp

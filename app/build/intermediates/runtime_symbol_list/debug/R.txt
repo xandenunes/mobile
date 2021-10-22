@@ -1863,7 +1863,6 @@ int drawable ic_mtrl_chip_close_circle 0x7f070086
 int drawable ic_naveg 0x7f070087
 int drawable ic_tets 0x7f070088
 int drawable logo 0x7f070089
-int drawable makerlocation 0x7f07008a
 int drawable makerlocation_icon 0x7f07008b
 int drawable material_cursor_drawable 0x7f07008c
 int drawable material_ic_calendar_black_24dp 0x7f07008d
