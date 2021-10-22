@@ -1,13 +1,13 @@
-com/example/projeto/Historico.java
- com.example.projeto.Historico
 com/example/projeto/databinding/ActivityMapsBinding.java
  com.example.projeto.databinding.ActivityMapsBinding
+com/example/projeto/Historico.java
+ com.example.projeto.Historico
 com/example/projeto/databinding/ActivityMainBinding.java
  com.example.projeto.databinding.ActivityMainBinding
 com/example/projeto/databinding/ActivityConfiguracaoBinding.java
  com.example.projeto.databinding.ActivityConfiguracaoBinding
-com/example/projeto/databinding/ActivitySplashBinding.java
- com.example.projeto.databinding.ActivitySplashBinding
+com/example/projeto/Configuracao.java
+ com.example.projeto.Configuracao
 com/example/projeto/SplashActivity.java
  com.example.projeto.SplashActivity
  com.example.projeto.SplashActivity$1
@@ -19,8 +19,8 @@ com/example/projeto/BuildConfig.java
  com.example.projeto.BuildConfig
 com/example/projeto/databinding/ActivityHistoricoBinding.java
  com.example.projeto.databinding.ActivityHistoricoBinding
-com/example/projeto/Configuracao.java
- com.example.projeto.Configuracao
+com/example/projeto/databinding/ActivitySplashBinding.java
+ com.example.projeto.databinding.ActivitySplashBinding
 com/example/projeto/MainActivity.java
  com.example.projeto.MainActivity
  com.example.projeto.MainActivity$1

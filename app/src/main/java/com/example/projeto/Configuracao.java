@@ -1,6 +1,6 @@
 package com.example.projeto;
 
-import static com.example.projeto.MapsActivity.mudaMapa;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;

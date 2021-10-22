@@ -33,22 +33,25 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback,
         GoogleMap.OnMapClickListener {
 
-    private static GoogleMap mMap;
+    private GoogleMap mMap;
     private ActivityMapsBinding binding;
     private FusedLocationProviderClient client;
     private Marker maker = null;
+    private Marker maker2 = null;
     private SharedPreferences sharedPrefs;
     private SharedPreferences.Editor sharedPrefsEditor;
     List<Location> local = new ArrayList<Location>();
@@ -83,6 +86,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 != PackageManager.PERMISSION_GRANTED) {
             return;
         }
+
+
+        boolean orientacao2 = sharedPrefs.getBoolean("North", false);
+        boolean orientacao3 = sharedPrefs.getBoolean("Course", false);
+        mudaOrientacao(orientacao2, orientacao3);
 
         boolean tipo = sharedPrefs.getBoolean("Imagem", false);
         boolean trafego = sharedPrefs.getBoolean("Informacao",false);
@@ -167,6 +175,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     txtLatitude.setText(coordenadas(location.getLatitude()));
                     txtLongitude.setText(coordenadas(location.getLongitude()));
                     txtVelocidade.setText(velocidade(location.getSpeed()));
+                    LatLng origem = new LatLng(location.getLatitude(), location.getLongitude());
+                    if(maker2 != null){
+                        maker2.remove();
+                    }
+                    maker2 = mMap.addMarker(new MarkerOptions()
+                            .position(origem)
+                            .title("Estou aqui")
+                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.makerlocation_icon)));
                 }
             }
             @Override
@@ -180,14 +196,29 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     public String velocidade(double velo){
         String result = "";
-       Boolean unidadeMh = sharedPrefs.getBoolean("MH", false);
+        float velocidade = (float) velo;
+        Boolean unidadeMh = sharedPrefs.getBoolean("MH", false);
+
         if(unidadeMh == false){
-            result = String.valueOf(velo * 1.61);
+            float mh = (float) (velocidade*3.60);
+            result = formatarFloat(mh) + " Km/h";
         }
         else{
-            result = String.valueOf(velo);
+            float km = (float) (velocidade*2.24);
+            result = formatarFloat(km) + " mph";
         }
         return result;
+    }
+
+    public String formatarFloat(float numero){
+        String retorno = "";
+        DecimalFormat formatter = new DecimalFormat("0.00");
+        try{
+            retorno = formatter.format(numero);
+        }catch(Exception ex){
+            System.err.println("Erro ao formatar numero: " + ex);
+        }
+        return retorno;
     }
 
     public String coordenadas(double lat){
@@ -237,7 +268,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         return result;
     }
 
-
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults){
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -261,7 +291,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
            maker.remove();
         }
         //add um novo marcador
-        maker = mMap.addMarker(new MarkerOptions().position(latLng).title("Estou aqui"));
+        maker = mMap.addMarker(new MarkerOptions()
+                .position(latLng)
+                .title("Estou aqui"));
     }
 
     @Override
@@ -282,7 +314,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
-    public static void mudaMapa(boolean tipo, boolean trafego){
+
+    public void mudaOrientacao(boolean North, boolean Course){
+        if(North==true){
+            mMap.getUiSettings().setRotateGesturesEnabled(false);
+        }
+        if(Course==true){
+            //falta fazer a alteração para course up
+        }
+        if(North == false && Course == false){
+            mMap.getUiSettings().setRotateGesturesEnabled(true);
+        }
+    }
+
+    public void mudaMapa(boolean tipo, boolean trafego){
         mMap.setTrafficEnabled(trafego);
 
         mMap.moveCamera(CameraUpdateFactory.scrollBy(0,0));
@@ -293,7 +338,5 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
        if(tipo==false) {
            mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
        }
-
-
     }
 }

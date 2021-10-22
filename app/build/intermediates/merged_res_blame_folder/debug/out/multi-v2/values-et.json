@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Davi\\Documents\\projetos\\mobile\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-et\\values-et.xml",
+            "outputFile": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-et\\values-et.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Davi\\.gradle\\caches\\transforms-3\\255d63c0f9f8f5d12ab3191ffb377750\\transformed\\core-1.5.0\\res\\values-et\\values-et.xml",

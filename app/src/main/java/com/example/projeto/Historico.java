@@ -66,7 +66,9 @@ public class Historico extends FragmentActivity implements OnMapReadyCallback {
             double latitude = (double) sharedPrefs.getFloat("Latitude" + i, 0);
             double longitude = (double) sharedPrefs.getFloat("Longitude" + i, 0);
             LatLng ponto = new LatLng(latitude, longitude);
-            mMap.addMarker(new MarkerOptions().position(ponto).title("atualizando"));
+            mMap.addMarker(new MarkerOptions()
+                    .position(ponto)
+                    .title("atualizando"));
             mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ponto, 15));
             i--;
         }
