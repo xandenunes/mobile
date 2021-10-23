@@ -55,10 +55,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private FusedLocationProviderClient client;
     private Marker maker, maker2 = null;
     private SharedPreferences sharedPrefs;
-    private SharedPreferences.Editor sharedPrefsEditor;
+    private SharedPreferences.Editor sharedPrefsEditor; //usando para a tela histórico
     private Circle circuloDaLocalizacao = null;
     private TextView txtLatitude, txtLongitude, txtVelocidade;
-    List<Location> local = new ArrayList<Location>();
+    List<Location> local = new ArrayList<Location>(); //usando para a tela histórico
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +70,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                     .findFragmentById(R.id.map);
             mapFragment.getMapAsync(this);
+
             sharedPrefs = getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
             txtLatitude = (TextView) findViewById(R.id.text_latitude);
             txtLongitude = (TextView) findViewById(R.id.text_longitude);
@@ -89,6 +90,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             return;
         }
 
+        //recuperando dados da tabela referente a tipo e tráfego
         boolean tipo = sharedPrefs.getBoolean("Imagem", false);
         boolean trafego = sharedPrefs.getBoolean("Informacao",false);
         mudaMapa(tipo, trafego);
@@ -99,7 +101,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         //zoom para teste no emulador
         mMap.getUiSettings().setZoomControlsEnabled(true);
-
     }
 
     @Override
@@ -112,29 +113,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             ActivityCompat.requestPermissions(MapsActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
             return;
         }
-        //recuperando dados da tabela
+        //recuperando dados da tabela referente a orientação
         boolean orientacao2 = sharedPrefs.getBoolean("North", false);
         boolean orientacao3 = sharedPrefs.getBoolean("Course", false);
-        //
+
+            //pegando a locazição do usuário
             client.getLastLocation()
                     .addOnSuccessListener(new OnSuccessListener<Location>() {
                         @Override
                         public void onSuccess(Location location) {
-                            if (location != null) {
-                                LatLng origem = new LatLng(location.getLatitude(), location.getLongitude());
-                               // mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(origem, 20));
-                                    if(circuloDaLocalizacao != null){
-                                     circuloDaLocalizacao.remove();
-                                    }
-                                    circuloDaLocalizacao = mMap.addCircle(new CircleOptions()
-                                        .center(origem)
-                                        .radius(18)
-                                        .strokeColor(R.color.transparence)
-                                        .fillColor(R.color.transparence)
-                                        .strokeWidth(location.getAccuracy())
-                                    );
-                                }
-                            else{
+                            if (location == null) {
+                                //localização padrão
                                 txtLatitude.setText(coordenadas(-33.87365));
                                 txtLongitude.setText(coordenadas(151.20689));
                                 txtVelocidade.setText(velocidade(0.0));
@@ -187,6 +176,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 });
          */
 
+        //atualizando a localização
         final LocationCallback locationCallback = new LocationCallback() {
             @Override
             public void onLocationResult(LocationResult locationResult) {
@@ -194,118 +184,185 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     return;
                 }
                 for(Location location: locationResult.getLocations()){
-                    local.add(location);
-                    float rotacao = location.getBearing();
-                    txtLatitude.setText(coordenadas(location.getLatitude()));
-                    txtLongitude.setText(coordenadas(location.getLongitude()));
-                    txtVelocidade.setText(velocidade(location.getSpeed()));
-                    LatLng origem = new LatLng(location.getLatitude(), location.getLongitude());
+                    if(location != null) {
+                        //salvando uma tabela do tipo Localização
+                        local.add(location); //usando na tela histórico
 
-                    if(orientacao2==true){
-                        mMap.getUiSettings().setRotateGesturesEnabled(false);
-                        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(origem, 19));
-                    }
-                    if(orientacao3==true){
-                        //atualizando posição da câmera
-                        CameraPosition cameraPosition = new CameraPosition.Builder()
-                                .target(origem)
-                                .bearing(rotacao)
-                                .zoom(19)
-                                .build();
-                        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition), null);
-                    }
-                    if(orientacao2 == false && orientacao3 == false){
-                        mMap.getUiSettings().setRotateGesturesEnabled(true);
-                        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(origem, 19));
-                    }
+                        float rotacao = location.getBearing();
+                        //exibindo a localização na barra de status
+                        txtLatitude.setText(coordenadas(location.getLatitude()));
+                        txtLongitude.setText(coordenadas(location.getLongitude()));
+                        txtVelocidade.setText(velocidade(location.getSpeed()));
 
-                    if(maker2 != null){
-                        maker2.remove();
+                        LatLng origem = new LatLng(location.getLatitude(), location.getLongitude());
+
+                        //adicionando marcador do carro
+                        if (maker2 != null) {
+                            maker2.remove();
+                        }
+                        maker2 = mMap.addMarker(new MarkerOptions()
+                                .position(origem)
+                                .title("Estou aqui")
+                                .icon(BitmapDescriptorFactory.fromResource(R.drawable.makerlocation))
+                                .rotation(rotacao));
+
+                        //adicionando o círculo
+                        if(circuloDaLocalizacao != null){
+                            circuloDaLocalizacao.remove();
+                        }
+                        circuloDaLocalizacao = mMap.addCircle(new CircleOptions()
+                                .center(origem)
+                                .radius(18)
+                                .strokeColor(R.color.transparence)
+                                .fillColor(R.color.transparence)
+                                .strokeWidth(location.getAccuracy())
+                        );
+
+                        //mudando orientação
+                        if (orientacao2 == true) {
+                            mMap.getUiSettings().setRotateGesturesEnabled(false);
+                            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(origem, 19));
+                        }
+                        if (orientacao3 == true) {
+                            //atualizando posição da câmera
+                            CameraPosition cameraPosition = new CameraPosition.Builder()
+                                    .target(origem)
+                                    .bearing(rotacao)
+                                    .zoom(19)
+                                    .build();
+                            mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition), null);
+                        }
+                        if (orientacao2 == false && orientacao3 == false) {
+                            mMap.getUiSettings().setRotateGesturesEnabled(true);
+                            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(origem, 19));
+                        }
                     }
-                    maker2 = mMap.addMarker(new MarkerOptions()
-                            .position(origem)
-                            .title("Estou aqui")
-                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.makerlocation))
-                            .rotation(rotacao));
                 }
             }
             @Override
             public void onLocationAvailability(LocationAvailability locationAvailability){
             }
         };
+
+        //enviando a atualização da localização para o cliente
         client.requestLocationUpdates(locationRequest, locationCallback, null);
     }
 
     public String velocidade(double velo){
         String result = "";
-        float velocidade = (float) velo;
+        String identificador = "VELOCIDADE";
+        double velocidade = velo;
         Boolean unidadeMh = sharedPrefs.getBoolean("MH", false);
 
         if(unidadeMh == false){
-            float mh = (float) (velocidade*3.60);
-            result = formatarFloat(mh) + " Km/h";
+            double Km = velocidade*3.60;
+            result = formatarFloat(Km, identificador) + " Km/h";
         }
         else{
-            float km = (float) (velocidade*2.24);
-            result = formatarFloat(km) + " mph";
+            double mh = velocidade*2.24;
+            result = formatarFloat(mh, identificador) + " mph";
         }
         return result;
     }
 
-    public String formatarFloat(float numero){
+    public String formatarFloat(double numero, String identificador){
         String retorno = "";
-        DecimalFormat formatter = new DecimalFormat("0.00");
-        try{
-            retorno = formatter.format(numero);
-        }catch(Exception ex){
-            System.err.println("Erro ao formatar numero: " + ex);
+        if(identificador.equals("VELOCIDADE")){
+            DecimalFormat formatter = new DecimalFormat("0.00");
+            try{
+                retorno = formatter.format(numero);
+            }catch(Exception ex){
+                System.err.println("Erro ao formatar numero: " + ex);
+            }
+        }
+        if(identificador.equals("COORDENADA")){
+            DecimalFormat formatter = new DecimalFormat("00");
+            try{
+                retorno = formatter.format(numero);
+            }catch(Exception ex){
+                System.err.println("Erro ao formatar numero: " + ex);
+            }
+        }
+        if(identificador.equals("COORDENADA2")){
+            DecimalFormat formatter = new DecimalFormat("#.00");
+            try{
+                retorno = formatter.format(numero);
+                retorno = retorno.replace(",", "");
+            }catch(Exception ex){
+                System.err.println("Erro ao formatar numero: " + ex);
+            }
+        }
+        if(identificador.equals("COORDENADA3")){
+            DecimalFormat formatter = new DecimalFormat("#.000");
+            try{
+                retorno = formatter.format(numero);
+                retorno = retorno.replace(",", "");
+            }catch(Exception ex){
+                System.err.println("Erro ao formatar numero: " + ex);
+            }
         }
         return retorno;
     }
 
     public String coordenadas(double lat){
-        double valGrau, valMin, valSeg = 0;
+        double valGrau, valMin, valSeg, auxSeg = 0;
         String result = "";
+        String retorno = "";
+        String identificador = "COORDENADA";
+        String identificador2 = "COORDENADA2";
+        String identificador3 = "COORDENADA3";
+        double aux = lat;
+
         lat = Math.abs(lat);
 
         Boolean Coordenada2 = sharedPrefs.getBoolean("Coordenada_2", false);
         Boolean Coordenada3 = sharedPrefs.getBoolean("Coordenada_3", false);
 
-        if(Coordenada2 == false && Coordenada2 == false){
+        if(Coordenada2 == false && Coordenada3 == false){
             //para grau
             lat = Math.abs(lat);
 
             valGrau = Math.floor(lat);
-            result = valGrau + "º";
+            result = formatarFloat(valGrau, identificador) + "º";
 
-            valMin = Math.floor((lat - valGrau) * 3600);
-            result += valMin;
+            auxSeg = Math.floor((lat - valGrau) * 60);
+            valMin = Math.floor((lat - valGrau) * 60) / 60;
+            result += formatarFloat(valMin, identificador2);
+
+            valSeg = (Math.floor((lat - valGrau - auxSeg / 60) * 3600 * 1000) / 1000) / 3600;
+            result += formatarFloat(valSeg, identificador3);
         }
 
         if(Coordenada2 == true){
             //para grau e minutos
             valGrau = Math.floor(lat);
-            result = valGrau + "º";
+            result = formatarFloat(valGrau, identificador) + "º";
 
             valMin = Math.floor((lat - valGrau) * 60);
-            result += valMin + "'";
+            result += formatarFloat(valMin, identificador) + ".";
 
-            valSeg = Math.floor((lat - valGrau - valMin / 60) * 3600 * 1000) / 1000;
-            result += valSeg;
+            valSeg = (Math.floor((lat - valGrau - valMin / 60) * 3600 * 1000) / 1000) / 3600;
+            result += formatarFloat(valSeg, identificador3) + "'";
         }
 
         if(Coordenada3 == true){
+            //para grau, minutos e segundos
             valGrau = Math.floor(lat);
-            result = valGrau + "º";
+            result = formatarFloat(valGrau, identificador) + "º";
 
             valMin = Math.floor((lat - valGrau) * 60);
-            result += valMin + "'";
+            result += formatarFloat(valMin, identificador) + "'";
 
             valSeg = Math.round((lat - valGrau - valMin / 60) * 3600 * 1000) / 1000;
-            result += valSeg + "''";
-
+            result += formatarFloat(valSeg, identificador) + "''";
         }
-        return result;
+        if(aux <= -0){
+            retorno = "-" + result;
+        }
+        else{
+            retorno = result;
+        }
+        return retorno;
     }
 
     @Override
@@ -338,6 +395,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     public void onPause(){
+        //usando na tela histórico
         super.onPause();
         sharedPrefsEditor = sharedPrefs.edit();
         if(sharedPrefsEditor!=null){
