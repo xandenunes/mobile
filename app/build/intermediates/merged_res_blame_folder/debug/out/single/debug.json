@@ -40,6 +40,10 @@
         "source": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\src\\main\\res\\drawable\\ic_gnss.xml"
     },
     {
+        "merged": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\build\\intermediates\\merged_res\\debug\\layout_toolbar.xml.flat",
+        "source": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\src\\main\\res\\layout\\toolbar.xml"
+    },
+    {
         "merged": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_container_components.xml.flat",
         "source": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\src\\main\\res\\drawable\\container_components.xml"
     },
@@ -90,6 +94,10 @@
     {
         "merged": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_creditos.xml.flat",
         "source": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\src\\main\\res\\drawable\\ic_creditos.xml"
+    },
+    {
+        "merged": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_makerlocation.png.flat",
+        "source": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\src\\main\\res\\drawable\\makerlocation.png"
     },
     {
         "merged": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_configuracao.xml.flat",

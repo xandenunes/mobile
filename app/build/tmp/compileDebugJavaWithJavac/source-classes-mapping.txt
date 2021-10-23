@@ -1,3 +1,5 @@
+com/example/projeto/BuildConfig.java
+ com.example.projeto.BuildConfig
 com/example/projeto/databinding/ActivityMapsBinding.java
  com.example.projeto.databinding.ActivityMapsBinding
 com/example/projeto/Historico.java
@@ -15,19 +17,17 @@ com/example/projeto/Credito.java
  com.example.projeto.Credito
 com/example/projeto/databinding/ActivityCreditoBinding.java
  com.example.projeto.databinding.ActivityCreditoBinding
-com/example/projeto/MainActivity.java
- com.example.projeto.MainActivity
- com.example.projeto.MainActivity$1
+com/example/projeto/databinding/ToolbarBinding.java
+ com.example.projeto.databinding.ToolbarBinding
 com/example/projeto/databinding/ActivityHistoricoBinding.java
  com.example.projeto.databinding.ActivityHistoricoBinding
 com/example/projeto/databinding/ActivitySplashBinding.java
  com.example.projeto.databinding.ActivitySplashBinding
-com/example/projeto/BuildConfig.java
- com.example.projeto.BuildConfig
+com/example/projeto/MainActivity.java
+ com.example.projeto.MainActivity
+ com.example.projeto.MainActivity$1
 com/example/projeto/MapsActivity.java
  com.example.projeto.MapsActivity
  com.example.projeto.MapsActivity$1
  com.example.projeto.MapsActivity$2
  com.example.projeto.MapsActivity$3
- com.example.projeto.MapsActivity$4
- com.example.projeto.MapsActivity$5

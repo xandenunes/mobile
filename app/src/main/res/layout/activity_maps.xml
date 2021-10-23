@@ -18,82 +18,78 @@
 
     <TextView
         android:id="@+id/titulo_latitude"
+        app:layout_constraintTop_toTopOf="@id/containerComponentsCoordenada"
+        app:layout_constraintStart_toStartOf="@id/containerComponentsCoordenada"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
         android:text="@string/tituloLatitude"
         android:textColor="@color/black"
-        android:textSize="16sp"
-        android:layout_marginTop="15dp"
-        app:layout_constraintStart_toStartOf="@id/containerComponentsCoordenada"
-        app:layout_constraintTop_toTopOf="@id/containerComponentsCoordenada"
-        />
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/text_latitude"
+        app:layout_constraintTop_toTopOf="@id/containerComponentsCoordenada"
+        app:layout_constraintStart_toEndOf="@+id/titulo_latitude"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_marginStart="16dp"
-        android:textColor="@color/black"
-        android:textSize="16sp"
         android:layout_marginTop="15dp"
-        app:layout_constraintStart_toEndOf="@id/titulo_latitude"
-        app:layout_constraintTop_toTopOf="@id/containerComponentsCoordenada"
-        />
+        android:textColor="@color/black"
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/titulo_longitude"
+        app:layout_constraintStart_toStartOf="@id/containerComponentsCoordenada"
+        app:layout_constraintTop_toTopOf="@id/titulo_latitude"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="25dp"
         android:text="@string/tituloLongitude"
         android:textColor="@color/black"
-        android:textSize="16sp"
-        android:layout_marginTop="30dp"
-        app:layout_constraintStart_toStartOf="@id/containerComponentsCoordenada"
-        app:layout_constraintTop_toTopOf="@id/titulo_latitude"
-        />
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/text_longitude"
+        app:layout_constraintStart_toEndOf="@id/titulo_longitude"
+        app:layout_constraintTop_toBottomOf="@id/titulo_latitude"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="3dp"
         android:textColor="@color/black"
-        android:textSize="16sp"
-        android:layout_marginTop="7dp"
-        app:layout_constraintStart_toEndOf="@id/titulo_longitude"
-        app:layout_constraintTop_toBottomOf="@id/titulo_latitude"
-        />
+        android:textSize="16sp" />
 
 
     <TextView
         android:id="@+id/titulo_velocidade"
+        app:layout_constraintStart_toStartOf="@id/containerComponentsCoordenada"
+        app:layout_constraintTop_toTopOf="@id/titulo_longitude"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="10dp"
         android:text="@string/tituloVelocidade"
         android:textColor="@color/black"
-        android:textSize="16sp"
-        android:layout_marginTop="30dp"
-        app:layout_constraintStart_toStartOf="@id/containerComponentsCoordenada"
-        app:layout_constraintTop_toTopOf="@id/titulo_longitude"
-        />
+        android:textSize="16sp" />
 
 
     <TextView
         android:id="@+id/text_Velocidade"
+        app:layout_constraintStart_toEndOf="@id/titulo_velocidade"
+        app:layout_constraintTop_toBottomOf="@id/titulo_longitude"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="10dp"
         android:textColor="@color/black"
-        android:textSize="16sp"
-        android:layout_marginTop="7dp"
-        app:layout_constraintStart_toEndOf="@id/titulo_velocidade"
-        app:layout_constraintTop_toBottomOf="@id/titulo_longitude"
-        />
-
-
+        android:textSize="16sp" />
 
     <fragment
         android:id="@+id/map"
@@ -104,8 +100,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/containerComponentsCoordenada"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

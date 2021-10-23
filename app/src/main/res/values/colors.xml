@@ -8,10 +8,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+
     <!--- adicão de cores-->
     <color name="aqua">#00FFFF</color>
     <color name="darkTurquoise">#00CED1</color>
     <color name="turquoise">#40E0D0</color>
     <color name="aquamarine">#7FFFD4</color>
     <color name="gainsboro">#DCDCDC</color>
+    <color name="transparence">#D9FFFFFF</color>
 </resources>

@@ -34,6 +34,9 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.Circle;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -50,14 +53,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private GoogleMap mMap;
     private ActivityMapsBinding binding;
     private FusedLocationProviderClient client;
-    private Marker maker = null;
-    private Marker maker2 = null;
+    private Marker maker, maker2 = null;
     private SharedPreferences sharedPrefs;
     private SharedPreferences.Editor sharedPrefsEditor;
+    private Circle circuloDaLocalizacao = null;
+    private TextView txtLatitude, txtLongitude, txtVelocidade;
     List<Location> local = new ArrayList<Location>();
-    private TextView txtLatitude;
-    private TextView txtLongitude;
-    private TextView txtVelocidade;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,22 +82,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.setOnMapClickListener(this);
         mMap.setMinZoomPreference(6.0f);
         mMap.setMaxZoomPreference(20.0f);
+
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {
             return;
         }
 
-
-        boolean orientacao2 = sharedPrefs.getBoolean("North", false);
-        boolean orientacao3 = sharedPrefs.getBoolean("Course", false);
-        mudaOrientacao(orientacao2, orientacao3);
-
         boolean tipo = sharedPrefs.getBoolean("Imagem", false);
         boolean trafego = sharedPrefs.getBoolean("Informacao",false);
         mudaMapa(tipo, trafego);
 
-        mMap.setMyLocationEnabled(true);
+        //mMap.setMyLocationEnabled(true);
         mMap.getUiSettings().setMyLocationButtonEnabled(true);
         mMap.getUiSettings().setCompassEnabled(true);
 
@@ -115,20 +112,44 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             ActivityCompat.requestPermissions(MapsActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
             return;
         }
+        //recuperando dados da tabela
+        boolean orientacao2 = sharedPrefs.getBoolean("North", false);
+        boolean orientacao3 = sharedPrefs.getBoolean("Course", false);
+        //
             client.getLastLocation()
                     .addOnSuccessListener(new OnSuccessListener<Location>() {
                         @Override
                         public void onSuccess(Location location) {
-                            if(location!=null){
+                            if (location != null) {
                                 LatLng origem = new LatLng(location.getLatitude(), location.getLongitude());
-                                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(origem, 15));
+                               // mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(origem, 20));
+                                    if(circuloDaLocalizacao != null){
+                                     circuloDaLocalizacao.remove();
+                                    }
+                                    circuloDaLocalizacao = mMap.addCircle(new CircleOptions()
+                                        .center(origem)
+                                        .radius(18)
+                                        .strokeColor(R.color.transparence)
+                                        .fillColor(R.color.transparence)
+                                        .strokeWidth(location.getAccuracy())
+                                    );
+                                }
+                            else{
+                                txtLatitude.setText(coordenadas(-33.87365));
+                                txtLongitude.setText(coordenadas(151.20689));
+                                txtVelocidade.setText(velocidade(0.0));
+                                LatLng cidade = new LatLng(-33.87365, 151.20689);
+                                maker2 = mMap.addMarker(new MarkerOptions()
+                                        .position(cidade)
+                                        .title("Local padrão")
+                                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.makerlocation)));
+                                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(cidade, 15));
                             }
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-
                         }
                     });
 
@@ -144,6 +165,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder()
                 .addLocationRequest(locationRequest);
 
+        /* Testa se os servições de localização estão ativados
         SettingsClient settingsClient = LocationServices.getSettingsClient(this);
         settingsClient.checkLocationSettings(builder.build())
                 .addOnSuccessListener(new OnSuccessListener<LocationSettingsResponse>() {
@@ -163,6 +185,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         }
                     }
                 });
+         */
 
         final LocationCallback locationCallback = new LocationCallback() {
             @Override
@@ -172,17 +195,38 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 }
                 for(Location location: locationResult.getLocations()){
                     local.add(location);
+                    float rotacao = location.getBearing();
                     txtLatitude.setText(coordenadas(location.getLatitude()));
                     txtLongitude.setText(coordenadas(location.getLongitude()));
                     txtVelocidade.setText(velocidade(location.getSpeed()));
                     LatLng origem = new LatLng(location.getLatitude(), location.getLongitude());
+
+                    if(orientacao2==true){
+                        mMap.getUiSettings().setRotateGesturesEnabled(false);
+                        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(origem, 19));
+                    }
+                    if(orientacao3==true){
+                        //atualizando posição da câmera
+                        CameraPosition cameraPosition = new CameraPosition.Builder()
+                                .target(origem)
+                                .bearing(rotacao)
+                                .zoom(19)
+                                .build();
+                        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition), null);
+                    }
+                    if(orientacao2 == false && orientacao3 == false){
+                        mMap.getUiSettings().setRotateGesturesEnabled(true);
+                        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(origem, 19));
+                    }
+
                     if(maker2 != null){
                         maker2.remove();
                     }
                     maker2 = mMap.addMarker(new MarkerOptions()
                             .position(origem)
                             .title("Estou aqui")
-                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.makerlocation_icon)));
+                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.makerlocation))
+                            .rotation(rotacao));
                 }
             }
             @Override
@@ -190,9 +234,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         };
         client.requestLocationUpdates(locationRequest, locationCallback, null);
-
     }
-
 
     public String velocidade(double velo){
         String result = "";
@@ -238,7 +280,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             valMin = Math.floor((lat - valGrau) * 3600);
             result += valMin;
-
         }
 
         if(Coordenada2 == true){
@@ -251,7 +292,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             valSeg = Math.floor((lat - valGrau - valMin / 60) * 3600 * 1000) / 1000;
             result += valSeg;
-
         }
 
         if(Coordenada3 == true){
@@ -311,19 +351,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 sharedPrefsEditor.putInt("Contador", i);
                 sharedPrefsEditor.commit();
             }
-        }
-    }
-
-
-    public void mudaOrientacao(boolean North, boolean Course){
-        if(North==true){
-            mMap.getUiSettings().setRotateGesturesEnabled(false);
-        }
-        if(Course==true){
-            //falta fazer a alteração para course up
-        }
-        if(North == false && Course == false){
-            mMap.getUiSettings().setRotateGesturesEnabled(true);
         }
     }
 
