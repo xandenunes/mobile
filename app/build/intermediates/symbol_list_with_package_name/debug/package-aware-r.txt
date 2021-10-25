@@ -1866,7 +1866,8 @@ drawable ic_naveg
 drawable ic_tets
 drawable logo
 drawable makerlocation
-drawable makerlocation_icon
+drawable makerlocation2
+drawable makerlocationpd
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp

@@ -92,12 +92,12 @@
         "source": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\src\\main\\res\\drawable\\switchtracker.xml"
     },
     {
-        "merged": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_creditos.xml.flat",
-        "source": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\src\\main\\res\\drawable\\ic_creditos.xml"
-    },
-    {
         "merged": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_makerlocation.png.flat",
         "source": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\src\\main\\res\\drawable\\makerlocation.png"
+    },
+    {
+        "merged": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_creditos.xml.flat",
+        "source": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\src\\main\\res\\drawable\\ic_creditos.xml"
     },
     {
         "merged": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_configuracao.xml.flat",
@@ -116,8 +116,16 @@
         "source": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\src\\main\\res\\layout\\activity_historico.xml"
     },
     {
+        "merged": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_makerlocationpd.png.flat",
+        "source": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\src\\main\\res\\drawable\\makerlocationpd.png"
+    },
+    {
         "merged": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
         "source": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_makerlocation2.png.flat",
+        "source": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\src\\main\\res\\drawable\\makerlocation2.png"
     },
     {
         "merged": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_logo.png.flat",
@@ -146,10 +154,6 @@
     {
         "merged": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_switchbutton.xml.flat",
         "source": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\src\\main\\res\\drawable\\switchbutton.xml"
-    },
-    {
-        "merged": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_makerlocation_icon.png.flat",
-        "source": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\src\\main\\res\\drawable\\makerlocation_icon.png"
     },
     {
         "merged": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",

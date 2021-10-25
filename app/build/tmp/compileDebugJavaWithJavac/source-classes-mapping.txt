@@ -17,6 +17,9 @@ com/example/projeto/databinding/ActivityConfiguracaoBinding.java
  com.example.projeto.databinding.ActivityConfiguracaoBinding
 com/example/projeto/Credito.java
  com.example.projeto.Credito
+com/example/projeto/BuscarCoordenadasTask.java
+ com.example.projeto.BuscarCoordenadasTask
+ com.example.projeto.BuscarCoordenadasTask$1
 com/example/projeto/databinding/ActivityCreditoBinding.java
  com.example.projeto.databinding.ActivityCreditoBinding
 com/example/projeto/databinding/ActivityHistoricoBinding.java
