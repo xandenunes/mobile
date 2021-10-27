@@ -7769,7 +7769,7 @@
         <item name="android:background">@drawable/container_components</item>
         <item name="android:layout_marginRight">5dp</item>
         <item name="android:layout_marginLeft">5dp</item>
-        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginTop">5dp</item>
     </style><style name="ContainerComponents1">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">100dp</item>

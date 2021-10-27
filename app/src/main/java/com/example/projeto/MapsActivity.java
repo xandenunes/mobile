@@ -134,12 +134,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             //caso a localização não retorne um valor nulo, ou seja: serviços de localização desativados
                             if (location == null) {
                                 //localização padrão
-                                txtLatitude.setText(coordenadas(-33.87365));
-                                txtLongitude.setText(coordenadas(151.20689));
-                                txtVelocidade.setText(velocidade(0.0));
-                                LatLng cidade = new LatLng(-33.87365, 151.20689);
-                                addMarcador(cidade, 0);
-                                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(cidade, 18.0f));
+                                double latitude = -33.87365;
+                                double longitude = 151.20689;
+                                double velocidade = 0;
+                                LatLng cidade = new LatLng(latitude, longitude);
+                                escreverNaBarraDeStatus(latitude, longitude, velocidade);
+                                addMarcadorDoCarro(cidade, 0);
+                                atualizandoCameraComZoom(cidade);
                             }
                         }
                     })
@@ -192,16 +193,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     if(location != null) {
                         float rotacao = location.getBearing();
                         float acuracia = location.getAccuracy();
-                        LatLng origem = new LatLng(location.getLatitude(), location.getLongitude());
                         float aprox = mMap.getCameraPosition().zoom;
+                        LatLng origem = new LatLng(location.getLatitude(), location.getLongitude());
 
                         //exibindo a localização na barra de status
-                        txtLatitude.setText(coordenadas(location.getLatitude()));
-                        txtLongitude.setText(coordenadas(location.getLongitude()));
-                        txtVelocidade.setText(velocidade(location.getSpeed()));
+                        escreverNaBarraDeStatus(location);
 
                         //chamada do método para adicionar o marcador
-                        addMarcador(origem, rotacao);
+                        addMarcadorDoCarro(origem, rotacao);
 
                         //chamada do método para adicionar o círculo
                          addCirculo(origem, acuracia);
@@ -222,7 +221,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         client.requestLocationUpdates(locationRequest, locationCallback, null);
     }
 
-    public void addMarcador(LatLng origem, float rotacao){
+    public void escreverNaBarraDeStatus(double latitude, double longitude, double velocidade){
+        txtLatitude.setText(coordenadas(latitude));
+        txtLongitude.setText(coordenadas(longitude));
+        txtVelocidade.setText(velocidade(velocidade));
+    }
+
+    public void escreverNaBarraDeStatus(Location location){
+        txtLatitude.setText(coordenadas(location.getLatitude()));
+        txtLongitude.setText(coordenadas(location.getLongitude()));
+        txtVelocidade.setText(velocidade(location.getSpeed()));
+    }
+
+    public void addMarcadorDoCarro(LatLng origem, float rotacao){
         //adicionando marcador do carro
         if (maker2 != null) {
             maker2.remove();
@@ -251,40 +262,48 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         );
     }
 
+    public void posicaoDaCamera(float aprox, float rotacao, LatLng origem){
+        cameraPosition = new CameraPosition.Builder()
+                .target(origem)
+                .bearing(rotacao)
+                .zoom(aprox)
+                .build();
+        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition), null);
+    }
+
+    public void atualizandoCameraComZoom(LatLng origem){
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(origem, 18.0f));
+    }
+
+    public void atualizaCameraSemZoom(LatLng origem){
+        mMap.animateCamera(CameraUpdateFactory.newLatLng(origem));
+    }
+
     public void mudaOrientacao(float rotacao, LatLng origem, float aprox, boolean orientacao2, boolean orientacao3){
+        float zoom = mMap.getCameraPosition().zoom;
         //mudando orientação
         if (orientacao2 == true) {
             //modo north up
             mMap.getUiSettings().setRotateGesturesEnabled(false);
             //atualizando a posição da câmera para caso o zoom seja padrão
-            if(mMap.getCameraPosition().zoom<=6.5f){
-                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(origem, 18.0f));
+            if(zoom<=6.5f){
+                atualizandoCameraComZoom(origem);
             }
             //atualizando a posição da câmera mantendo o zoom dado pelo usuário
-            else if(mMap.getCameraPosition().zoom>6.5f){
-                mMap.animateCamera(CameraUpdateFactory.newLatLng(origem));
+            else if(zoom>6.5f){
+                atualizaCameraSemZoom(origem);
             }
         }
         if (orientacao3 == true) {
             //atualizando posição da câmera no modo course up
             mMap.getUiSettings().setRotateGesturesEnabled(false);
             //criando uma nova posição de câmera para caso o zoom seja padrão
-            if(mMap.getCameraPosition().zoom<=6.5f){
-                cameraPosition = new CameraPosition.Builder()
-                        .target(origem)
-                        .bearing(rotacao)
-                        .zoom(18.0f)
-                        .build();
-                mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition), null);
+            if(zoom<=6.5f){
+                posicaoDaCamera(18.0f, rotacao, origem);
             }
             //criando uma nova posição de câmera mantendo o zoom dado pelo usuário
-            else if(mMap.getCameraPosition().zoom>6.5f){
-                cameraPosition = new CameraPosition.Builder()
-                        .target(origem)
-                        .bearing(rotacao)
-                        .zoom(aprox)
-                        .build();
-                mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition), null);
+            else if(zoom>6.5f){
+                posicaoDaCamera(aprox, rotacao, origem);
             }
         }
 
@@ -292,12 +311,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             //modo nenhuma
             mMap.getUiSettings().setRotateGesturesEnabled(true);
             //atualizando a posição da câmera para caso o zoom seja padrão
-            if(mMap.getCameraPosition().zoom<=6.5f){
-                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(origem, 18.0f));
+            if(zoom<=6.5f){
+                atualizandoCameraComZoom(origem);
             }
             //atualizando a posição da câmera mantendo o zoom dado pelo usuário
-            else if(mMap.getCameraPosition().zoom>6.5f){
-                mMap.animateCamera(CameraUpdateFactory.newLatLng(origem));
+            else if(zoom>6.5f){
+                atualizaCameraSemZoom(origem);
             }
         }
     }
@@ -378,10 +397,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         double valGrau, valMin, valSeg, auxSeg = 0;
         String result = "";
         String retorno = "";
-        String identificador = "COORDENADA";
-        String identificador2 = "COORDENADA2";
-        String identificador3 = "COORDENADA3";
-        String identificador4 = "COORDENADA4";
+        String[] identificadores = new String[]{"COORDENADA", "COORDENADA2", "COORDENADA3", "COORDENADA4"};
         double aux = lat;
         lat = Math.abs(lat);
 
@@ -393,39 +409,39 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             //lat = Math.abs(lat);
 
             valGrau = Math.floor(lat);
-            result = formatarFloat(valGrau, identificador) + "º";
+            result = formatarFloat(valGrau, identificadores[0]) + "º";
 
             auxSeg = Math.floor((lat - valGrau) * 60);
             valMin = Math.floor((lat - valGrau) * 60) / 59.7;
-            result += formatarFloat(valMin, identificador2);
+            result += formatarFloat(valMin, identificadores[1]);
 
             valSeg = (Math.floor((lat - valGrau - auxSeg / 60) * 3600 * 1000) / 1000) / 3599;
-            result += formatarFloat(valSeg, identificador3);
+            result += formatarFloat(valSeg, identificadores[2]);
 
         }
 
         if(Coordenada2 == true){
             //para grau e minutos
             valGrau = Math.floor(lat);
-            result = formatarFloat(valGrau, identificador) + "º";
+            result = formatarFloat(valGrau, identificadores[0]) + "º";
 
             valMin = Math.floor((lat - valGrau) * 60);
-            result += formatarFloat(valMin, identificador) + ".";
+            result += formatarFloat(valMin, identificadores[0]) + ".";
 
             valSeg = (Math.floor((lat - valGrau - valMin / 60) * 3600 * 1000) / 1000) / 60;
-            result += formatarFloat(valSeg, identificador4) + "'";
+            result += formatarFloat(valSeg, identificadores[3]) + "'";
         }
 
         if(Coordenada3 == true){
             //para grau, minutos e segundos
             valGrau = Math.floor(lat);
-            result = formatarFloat(valGrau, identificador) + "º";
+            result = formatarFloat(valGrau, identificadores[0]) + "º";
 
             valMin = Math.floor((lat - valGrau) * 60);
-            result += formatarFloat(valMin, identificador) + "'";
+            result += formatarFloat(valMin, identificadores[0]) + "'";
 
             valSeg = Math.round((lat - valGrau - valMin / 60) * 3600 * 1000) / 1000;
-            result += formatarFloat(valSeg, identificador) + "''";
+            result += formatarFloat(valSeg, identificadores[0]) + "''";
         }
 
         //testando se a coordenada original é positiva ao negativa
