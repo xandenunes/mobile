@@ -20,7 +20,6 @@ import com.google.android.gms.common.GoogleApiAvailability;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
 private long mLastClickTime = 0;
-    BancoDados db = new BancoDados(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,13 +95,4 @@ private long mLastClickTime = 0;
                break;
        }
     }
-/*
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        db.close();
-        db.deletaBD();
-    }
-
- */
 }

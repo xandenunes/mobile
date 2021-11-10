@@ -8,9 +8,9 @@ com/example/projeto/databinding/ActivityGnssBinding.java
  com.example.projeto.databinding.ActivityGnssBinding
 com/example/projeto/Configuracao.java
  com.example.projeto.Configuracao
-com/example/projeto/SplashActivity.java
- com.example.projeto.SplashActivity
- com.example.projeto.SplashActivity$1
+com/example/projeto/LogActvity.java
+ com.example.projeto.LogActvity
+ com.example.projeto.LogActvity$1
 com/example/projeto/databinding/ToolbarBinding.java
  com.example.projeto.databinding.ToolbarBinding
 com/example/projeto/BancoDados.java
@@ -37,9 +37,9 @@ com/example/projeto/Gnss.java
  com.example.projeto.Gnss$GnssStatusCallback
 com/example/projeto/databinding/ActivityHistoricoBinding.java
  com.example.projeto.databinding.ActivityHistoricoBinding
-com/example/projeto/LogActvity.java
- com.example.projeto.LogActvity
- com.example.projeto.LogActvity$1
+com/example/projeto/SplashActivity.java
+ com.example.projeto.SplashActivity
+ com.example.projeto.SplashActivity$1
 com/example/projeto/Historico.java
  com.example.projeto.Historico
  com.example.projeto.Historico$1

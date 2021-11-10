@@ -60,6 +60,9 @@ public class Historico extends FragmentActivity implements OnMapReadyCallback {
             ActivityCompat.requestPermissions(Historico.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
             return;
         }
+        clickFPBtn();
+    }
+    public void clickFPBtn(){
         Intent l = new Intent(this, LogActvity.class);
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -103,10 +106,16 @@ public class Historico extends FragmentActivity implements OnMapReadyCallback {
             }
 
             int i = locais.size();
-            LatLng pontoOrigem = new LatLng(locais.get(1).getLatitude(), locais.get(1).getLongitude());
+            LatLng pontoOrigem = new LatLng(locais.get(0).getLatitude(), locais.get(0).getLongitude());
             LatLng pontoDestino = new LatLng(locais.get(i-1).getLatitude(), locais.get(i-1).getLongitude());
             addMarcadorComum(pontoOrigem);
             addMarcadorCarro(pontoDestino);
+            db.close();
+        }
+        else if(locais.size() == 1){
+            LatLng pontoOrigem = new LatLng(locais.get(0).getLatitude(), locais.get(0).getLongitude());
+            addMarcadorCarro(pontoOrigem);
+            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(pontoOrigem, 18));
             db.close();
         }
         db.close();
