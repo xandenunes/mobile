@@ -5,26 +5,42 @@ import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.location.LocationProvider;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.example.projeto.databinding.ActivityHistoricoBinding;
+import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Historico extends FragmentActivity implements OnMapReadyCallback {
 
     private static GoogleMap mMap;
     private ActivityHistoricoBinding binding;
-    private Marker maker = null;
     private SharedPreferences sharedPrefs;
+    List<Local> locais = new ArrayList<Local>();
+    List<LatLng> decodedPath = new ArrayList<LatLng>();
+    BancoDados db = new BancoDados(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,11 +57,29 @@ public class Historico extends FragmentActivity implements OnMapReadyCallback {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {
-            Toast.makeText(this, "Localização desativada", Toast.LENGTH_SHORT).show();
-            finish();
+            ActivityCompat.requestPermissions(Historico.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+            return;
         }
+        Intent l = new Intent(this, LogActvity.class);
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(l);
+            }
+        });
     }
 
+    public void addRota(LatLng ponto){
+        decodedPath.add(ponto); // latitude e longitude
+        mMap.addPolyline(new PolylineOptions().addAll(decodedPath).color(R.color.white));
+    }
+
+    @Override
+    public void onRestart() {
+        super.onRestart();
+        recreate();
+    }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -57,23 +91,41 @@ public class Historico extends FragmentActivity implements OnMapReadyCallback {
         boolean tipo = sharedPrefs.getBoolean("Imagem", false);
         boolean trafego = sharedPrefs.getBoolean("Informacao",false);
         mudaMapa(tipo, trafego);
-
         mMap.getUiSettings().setZoomControlsEnabled(true);
 
         //Localização ao longo do tempo
-        int i = sharedPrefs.getInt("Contador", 0);
-        while(i!=0){
-            double latitude = (double) sharedPrefs.getFloat("Latitude" + i, 0);
-            double longitude = (double) sharedPrefs.getFloat("Longitude" + i, 0);
-            LatLng ponto = new LatLng(latitude, longitude);
-            mMap.addMarker(new MarkerOptions()
-                    .position(ponto)
-                    .title("atualizando"));
-            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ponto, 15));
-            i--;
+        locais =  db.lerDados();
+        if(locais.size() > 1){
+            for(Local lat : locais){
+                LatLng ponto = new LatLng(lat.getLatitude(), lat.getLongitude());
+                addRota(ponto);
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ponto, 18));
+            }
+
+            int i = locais.size();
+            LatLng pontoOrigem = new LatLng(locais.get(1).getLatitude(), locais.get(1).getLongitude());
+            LatLng pontoDestino = new LatLng(locais.get(i-1).getLatitude(), locais.get(i-1).getLongitude());
+            addMarcadorComum(pontoOrigem);
+            addMarcadorCarro(pontoDestino);
+            db.close();
         }
+        db.close();
     }
 
+    public void addMarcadorComum(LatLng pontoOrigem ){
+        mMap.addMarker(new MarkerOptions()
+                .position(pontoOrigem)
+                .title("Origem"));
+
+    }
+
+
+    public void addMarcadorCarro(LatLng pontoDestino){
+        mMap.addMarker(new MarkerOptions()
+                .position(pontoDestino)
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.makerlocation))
+                .title("Destino"));
+    }
 
     public static void mudaMapa(boolean tipo, boolean trafego){
         mMap.setTrafficEnabled(trafego);
@@ -84,4 +136,23 @@ public class Historico extends FragmentActivity implements OnMapReadyCallback {
         if(tipo==false) {
             mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         }
-    }}
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults){
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode){
+            case 1:
+                if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                    recreate();
+                }
+                else{
+                    Toast.makeText(this, "Localização desativada", Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+                return;
+        }
+    }
+}
+

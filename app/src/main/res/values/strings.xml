@@ -37,4 +37,6 @@
     <string name="tituloLongitude">Longitude:</string>
     <string name="tituloLatitude">Latitude:</string>
     <string name="tituloVelocidade">Velocidade:</string>
+    <string name="tituloBearing">Bearing:</string>
+    <string name="tituloNumeroGnss">Informação sobre o sistema GNSS:</string>
 </resources>

@@ -16,6 +16,10 @@
         "source": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_gnss.xml.flat",
+        "source": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\src\\main\\res\\layout\\activity_gnss.xml"
+    },
+    {
         "merged": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
@@ -68,6 +72,10 @@
         "source": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     },
     {
+        "merged": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_fab.xml.flat",
+        "source": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\src\\main\\res\\drawable\\ic_fab.xml"
+    },
+    {
         "merged": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_launcher_background.xml.flat",
         "source": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },
@@ -82,6 +90,10 @@
     {
         "merged": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_splash.xml.flat",
         "source": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\src\\main\\res\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_log_actvity.xml.flat",
+        "source": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\src\\main\\res\\layout\\activity_log_actvity.xml"
     },
     {
         "merged": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_fundo.xml.flat",
@@ -122,6 +134,10 @@
     {
         "merged": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
         "source": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_clear.xml.flat",
+        "source": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\src\\main\\res\\drawable\\ic_clear.xml"
     },
     {
         "merged": "C:\\Users\\Davi\\Desktop\\projeto\\mobile\\app\\build\\intermediates\\merged_res\\debug\\drawable_makerlocation2.png.flat",

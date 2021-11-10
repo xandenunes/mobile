@@ -1851,9 +1851,11 @@ drawable design_snackbar_background
 drawable fundo
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable ic_clear
 drawable ic_clock_black_24dp
 drawable ic_config
 drawable ic_creditos
+drawable ic_fab
 drawable ic_gnss
 drawable ic_historic
 drawable ic_keyboard_black_24dp
@@ -2048,6 +2050,8 @@ id containerComponentsCoordenada
 id containerComponentsCred1
 id containerComponentsCred2
 id containerComponentsCred3
+id containerGnss
+id containerGnss2
 id content
 id contentPanel
 id contiguous
@@ -2102,6 +2106,8 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id fab
+id fabLog
 id fade
 id fill
 id fill_horizontal
@@ -2158,6 +2164,7 @@ id line3
 id linear
 id listMode
 id list_item
+id listlog
 id logo
 id logo1
 id map
@@ -2367,14 +2374,18 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id text_BearingGnss
 id text_Velocidade
+id text_VelocidadeGnss
 id text_credito
 id text_credito1
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
 id text_latitude
+id text_latitudeGnss
 id text_longitude
+id text_longitudeGnss
 id text_title
 id textinput_counter
 id textinput_error
@@ -2387,9 +2398,13 @@ id tipoGroup
 id title
 id titleDividerNoCustom
 id title_template
+id titulo_BearingGnss
 id titulo_latitude
+id titulo_latitudeGnss
 id titulo_longitude
+id titulo_longitudeGnss
 id titulo_velocidade
+id titulo_velocidadeGnss
 id toggle
 id top
 id topPanel
@@ -2412,6 +2427,7 @@ id txtProgramador5
 id txtTipo
 id txtTituloConfig
 id txtTituloProg
+id txt_numeroGnss
 id txtformato
 id txtunidade
 id unchecked
@@ -2508,7 +2524,9 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_configuracao
 layout activity_credito
+layout activity_gnss
 layout activity_historico
+layout activity_log_actvity
 layout activity_main
 layout activity_maps
 layout activity_splash
@@ -2743,8 +2761,10 @@ string status_bar_notification_info_overflow
 string textcredito_txt
 string title_activity_historico
 string title_activity_maps
+string tituloBearing
 string tituloLatitude
 string tituloLongitude
+string tituloNumeroGnss
 string tituloVelocidade
 string txtInfo_txt
 string txtOrient_txt
@@ -3496,6 +3516,8 @@ style Widget_MaterialComponents_Toolbar_Surface
 style Widget_MaterialComponents_Tooltip
 style Widget_Support_CoordinatorLayout
 style containerComponentsCoordenadas
+style containerGnss
+style containerGnss2
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth

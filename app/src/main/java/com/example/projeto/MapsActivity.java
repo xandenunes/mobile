@@ -46,7 +46,9 @@ import com.google.android.gms.tasks.OnSuccessListener;
 
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMapClickListener {
@@ -57,10 +59,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private Marker maker, maker2 = null;
     private CameraPosition cameraPosition  = null;
     private SharedPreferences sharedPrefs;
-    private SharedPreferences.Editor sharedPrefsEditor; //usando para a tela histórico
     private Circle circuloDaLocalizacao = null;
     private TextView txtLatitude, txtLongitude, txtVelocidade;
-    List<Location> local = new ArrayList<Location>(); //usando para a tela histórico
+    List<Local> locais = new ArrayList<Local>(); //usando para a tela histórico
+    BancoDados db = new BancoDados(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -140,7 +142,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                 LatLng cidade = new LatLng(latitude, longitude);
                                 escreverNaBarraDeStatus(latitude, longitude, velocidade);
                                 addMarcadorDoCarro(cidade, 0);
-                                atualizandoCameraComZoom(cidade);
+                                atualizandoCameraComZoom(cidade, 18.0f);
                             }
                         }
                     })
@@ -194,10 +196,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         float rotacao = location.getBearing();
                         float acuracia = location.getAccuracy();
                         float aprox = mMap.getCameraPosition().zoom;
-                        LatLng origem = new LatLng(location.getLatitude(), location.getLongitude());
+                        double latidtude = location.getLatitude();
+                        double longitude = location.getLongitude();
+                        double velocidade = location.getSpeed();
+                        LatLng origem = new LatLng(latidtude, longitude);
+                        Calendar c = Calendar.getInstance();
+                        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                        String formattedDate = df.format(c.getTime());
 
                         //exibindo a localização na barra de status
-                        escreverNaBarraDeStatus(location);
+                        escreverNaBarraDeStatus(latidtude, longitude, velocidade);
 
                         //chamada do método para adicionar o marcador
                         addMarcadorDoCarro(origem, rotacao);
@@ -209,7 +217,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         mudaOrientacao(rotacao, origem, aprox, orientacao2, orientacao3);
 
                         //salvando uma tabela do tipo Localização
-                        local.add(location); //usando na tela histórico
+                        locais.add(criarNovoLocal(latidtude, longitude, formattedDate)); //usando para a tela histórico
                     }
                 }
             }
@@ -221,16 +229,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         client.requestLocationUpdates(locationRequest, locationCallback, null);
     }
 
-    public void escreverNaBarraDeStatus(double latitude, double longitude, double velocidade){
-        txtLatitude.setText(coordenadas(latitude));
-        txtLongitude.setText(coordenadas(longitude));
-        txtVelocidade.setText(velocidade(velocidade));
+    public Local criarNovoLocal(double latitude, double longitude, String data){
+        Local local = new Local();
+        local.setLongitude(longitude);
+        local.setLatitude(latitude);
+        local.setData(data);
+        return local;
     }
 
-    public void escreverNaBarraDeStatus(Location location){
-        txtLatitude.setText(coordenadas(location.getLatitude()));
-        txtLongitude.setText(coordenadas(location.getLongitude()));
-        txtVelocidade.setText(velocidade(location.getSpeed()));
+    public void escreverNaBarraDeStatus(double latitude, double longitude, double velocidade){
+        txtLatitude.setText(trataCoordenadas(latitude));
+        txtLongitude.setText(trataCoordenadas(longitude));
+        txtVelocidade.setText(trataVelocidade(velocidade));
     }
 
     public void addMarcadorDoCarro(LatLng origem, float rotacao){
@@ -271,8 +281,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition), null);
     }
 
-    public void atualizandoCameraComZoom(LatLng origem){
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(origem, 18.0f));
+    public void atualizandoCameraComZoom(LatLng origem, float zoom){
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(origem, zoom));
     }
 
     public void atualizaCameraSemZoom(LatLng origem){
@@ -287,7 +297,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             mMap.getUiSettings().setRotateGesturesEnabled(false);
             //atualizando a posição da câmera para caso o zoom seja padrão
             if(zoom<=6.5f){
-                atualizandoCameraComZoom(origem);
+                atualizandoCameraComZoom(origem, 18.0f);
             }
             //atualizando a posição da câmera mantendo o zoom dado pelo usuário
             else if(zoom>6.5f){
@@ -312,7 +322,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             mMap.getUiSettings().setRotateGesturesEnabled(true);
             //atualizando a posição da câmera para caso o zoom seja padrão
             if(zoom<=6.5f){
-                atualizandoCameraComZoom(origem);
+                atualizandoCameraComZoom(origem, 18.0f);
             }
             //atualizando a posição da câmera mantendo o zoom dado pelo usuário
             else if(zoom>6.5f){
@@ -321,7 +331,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
-    public String velocidade(double velo){
+    public String trataVelocidade(double velo){
         String result = "";
         String identificador = "VELOCIDADE";
         double velocidade = velo;
@@ -358,46 +368,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 System.err.println("Erro ao formatar numero: " + ex);
             }
         }
-        if(identificador.equals("COORDENADA2")){
-            DecimalFormat formatter = new DecimalFormat("#.00");
-            try{
-                formatter.setRoundingMode(RoundingMode.UP);
-                retorno = formatter.format(numero);
-                retorno = retorno.replace(",", "").replace("0", "");
-            }catch(Exception ex){
-                System.err.println("Erro ao formatar numero: " + ex);
-            }
-        }
-        if(identificador.equals("COORDENADA3")){
-            DecimalFormat formatter = new DecimalFormat("#.0000");
-            try{
-                retorno = formatter.format(numero);
-                retorno = retorno
-                        .replace(",", "")
-                        .replaceFirst("0", "")
-                        .replaceFirst("1", "");
-            }catch(Exception ex){
-                System.err.println("Erro ao formatar numero: " + ex);
-            }
-        }
-        if(identificador.equals("COORDENADA4")){
-            DecimalFormat formatter = new DecimalFormat("#.000");
-            try{
-                retorno = formatter.format(numero);
-                retorno = retorno
-                        .replace(",", "");
-            }catch(Exception ex){
-                System.err.println("Erro ao formatar numero: " + ex);
-            }
-        }
         return retorno;
     }
 
-    public String coordenadas(double lat){
-        double valGrau, valMin, valSeg, auxSeg = 0;
+    public String trataCoordenadas(double lat){
+        double valGrau, valMin, valSeg = 0;
         String result = "";
+        String latnormal = "";
         String retorno = "";
-        String[] identificadores = new String[]{"COORDENADA", "COORDENADA2", "COORDENADA3", "COORDENADA4"};
+        String identificador = "COORDENADA";
         double aux = lat;
         lat = Math.abs(lat);
 
@@ -406,42 +385,26 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         if(Coordenada2 == false && Coordenada3 == false){
             //para grau
-            //lat = Math.abs(lat);
-
-            valGrau = Math.floor(lat);
-            result = formatarFloat(valGrau, identificadores[0]) + "º";
-
-            auxSeg = Math.floor((lat - valGrau) * 60);
-            valMin = Math.floor((lat - valGrau) * 60) / 59.7;
-            result += formatarFloat(valMin, identificadores[1]);
-
-            valSeg = (Math.floor((lat - valGrau - auxSeg / 60) * 3600 * 1000) / 1000) / 3599;
-            result += formatarFloat(valSeg, identificadores[2]);
-
+            latnormal = Location.convert(lat, Location.FORMAT_DEGREES).replace(",", ".");
+            result = latnormal + "º";
         }
 
         if(Coordenada2 == true){
             //para grau e minutos
-            valGrau = Math.floor(lat);
-            result = formatarFloat(valGrau, identificadores[0]) + "º";
-
-            valMin = Math.floor((lat - valGrau) * 60);
-            result += formatarFloat(valMin, identificadores[0]) + ".";
-
-            valSeg = (Math.floor((lat - valGrau - valMin / 60) * 3600 * 1000) / 1000) / 60;
-            result += formatarFloat(valSeg, identificadores[3]) + "'";
+            latnormal = Location.convert(lat, Location.FORMAT_MINUTES).replace(":", "º ").replace(",", ".");
+            result = latnormal + "'";
         }
 
         if(Coordenada3 == true){
             //para grau, minutos e segundos
             valGrau = Math.floor(lat);
-            result = formatarFloat(valGrau, identificadores[0]) + "º";
+            result = formatarFloat(valGrau, identificador) + "º";
 
             valMin = Math.floor((lat - valGrau) * 60);
-            result += formatarFloat(valMin, identificadores[0]) + "'";
+            result += formatarFloat(valMin, identificador) + "'";
 
             valSeg = Math.round((lat - valGrau - valMin / 60) * 3600 * 1000) / 1000;
-            result += formatarFloat(valSeg, identificadores[0]) + "''";
+            result += formatarFloat(valSeg, identificador) + "''";
         }
 
         //testando se a coordenada original é positiva ao negativa
@@ -485,20 +448,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onPause(){
         //usando na tela histórico
-        //enviando dados para a sharedpreferences
+        //enviando dados para o bd
         super.onPause();
-        sharedPrefsEditor = sharedPrefs.edit();
-        if(sharedPrefsEditor!=null){
-            int i = 1;
-            for(Location l: local ){
-                float longitude = (float) l.getLongitude();
-                float latitude = (float) l.getLatitude();
-                sharedPrefsEditor.putFloat("Latitude" + i, latitude);
-                sharedPrefsEditor.putFloat("Longitude" + i, longitude);
-                i++;
-                sharedPrefsEditor.putInt("Contador", i);
-                sharedPrefsEditor.commit();
-            }
+        for(Local l: locais){
+                double longitude = l.getLongitude() ;
+                double latitude =  l.getLatitude();
+                String data = l.getData();
+                db.addLocalizacao(latitude, longitude, data);
         }
     }
 

@@ -19,6 +19,26 @@
         <item name="android:layout_marginTop">5dp</item>
     </style>
 
+    <!--- estilo do container coordenada da tela GNSS-->
+    <style name="containerGnss">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">130dp</item>
+        <item name="android:background">@drawable/container_components</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+    </style>
+
+    <!--- estilo do container2 coordenada da tela GNSS-->
+    <style name="containerGnss2">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">200dp</item>
+        <item name="android:background">@drawable/container_components</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginTop">30dp</item>
+    </style>
+
 
     <!--- estilo do container1 da tela configuração-->
     <style name="ContainerComponents1">

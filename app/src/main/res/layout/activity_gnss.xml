@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Gnss"
+    android:background="@drawable/fundo">
+
+
+    <View
+        android:id="@+id/containerGnss"
+        style="@style/containerGnss"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/containerGnss2"
+        style="@style/containerGnss2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/containerGnss" />
+
+
+    <TextView
+        android:id="@+id/txt_numeroGnss"
+        app:layout_constraintTop_toTopOf="@id/containerGnss2"
+        app:layout_constraintStart_toStartOf="@id/containerGnss2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/titulo_latitudeGnss"
+        app:layout_constraintTop_toTopOf="@id/containerGnss"
+        app:layout_constraintStart_toStartOf="@id/containerGnss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/tituloLatitude"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/text_latitudeGnss"
+        app:layout_constraintTop_toTopOf="@id/containerGnss"
+        app:layout_constraintStart_toEndOf="@+id/titulo_latitudeGnss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+
+    <TextView
+        android:id="@+id/titulo_longitudeGnss"
+        app:layout_constraintStart_toStartOf="@id/containerGnss"
+        app:layout_constraintTop_toTopOf="@id/titulo_latitudeGnss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/tituloLongitude"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/text_longitudeGnss"
+        app:layout_constraintStart_toEndOf="@id/titulo_longitudeGnss"
+        app:layout_constraintTop_toBottomOf="@id/titulo_latitudeGnss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="3dp"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+
+    <TextView
+        android:id="@+id/titulo_velocidadeGnss"
+        app:layout_constraintStart_toStartOf="@id/containerGnss"
+        app:layout_constraintTop_toTopOf="@id/titulo_longitudeGnss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/tituloVelocidade"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+
+    <TextView
+        android:id="@+id/text_VelocidadeGnss"
+        app:layout_constraintStart_toEndOf="@id/titulo_velocidadeGnss"
+        app:layout_constraintTop_toBottomOf="@id/titulo_longitudeGnss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+
+    <TextView
+        android:id="@+id/titulo_BearingGnss"
+        app:layout_constraintStart_toStartOf="@id/containerGnss"
+        app:layout_constraintTop_toTopOf="@id/titulo_velocidadeGnss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/tituloBearing"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+
+    <TextView
+        android:id="@+id/text_BearingGnss"
+        app:layout_constraintStart_toEndOf="@id/titulo_BearingGnss"
+        app:layout_constraintTop_toBottomOf="@id/titulo_velocidadeGnss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
