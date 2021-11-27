@@ -27,7 +27,8 @@ public class Gnss extends AppCompatActivity implements LocationListener{
     private LocationProvider locationProvider;
     private GnssStatusCallback gnssStatusCallback;
     private SharedPreferences sharedPrefs;
-    private TextView txtLatitude, txtLongitude, txtVelocidade, txtBearing, txtNumeroGnss;
+    private TextView txtLatitude, txtLongitude, txtVelocidade, txtBearing;
+    private circuloGnssView circuloGnss;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -35,6 +36,7 @@ public class Gnss extends AppCompatActivity implements LocationListener{
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_gnss);
+        circuloGnss=findViewById(R.id.circuloGnss);
         locationManager = (LocationManager)getSystemService(LOCATION_SERVICE);
         locationProvider = locationManager.getProvider(LocationManager.GPS_PROVIDER);
         sharedPrefs = getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
@@ -54,12 +56,12 @@ public class Gnss extends AppCompatActivity implements LocationListener{
         txtLongitude = (TextView) findViewById(R.id.text_longitudeGnss);
         txtVelocidade = (TextView) findViewById(R.id.text_VelocidadeGnss);
         txtBearing = (TextView) findViewById(R.id.text_BearingGnss);
-        txtNumeroGnss = (TextView)findViewById(R.id.txt_numeroGnss);
     }
+
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     private void desativaGNSS() {
-        locationManager.removeUpdates(this);
+       // locationManager.removeUpdates(this);
         locationManager.unregisterGnssStatusCallback(gnssStatusCallback);
     }
 
@@ -69,7 +71,6 @@ public class Gnss extends AppCompatActivity implements LocationListener{
                 != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(Gnss.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
-            return;
         }
         locationManager.requestLocationUpdates(locationProvider.getName(),
                 5*1000,
@@ -79,13 +80,14 @@ public class Gnss extends AppCompatActivity implements LocationListener{
         locationManager.registerGnssStatusCallback(gnssStatusCallback);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults){
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode){
             case 1:
                 if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                    recreate();
+                    ativaGNSS();
                 }
                 else{
                     Toast.makeText(this, "Localização desativada", Toast.LENGTH_SHORT).show();
@@ -104,9 +106,7 @@ public class Gnss extends AppCompatActivity implements LocationListener{
 
     @Override
     public void onLocationChanged(@NonNull Location location) {
-        if(location!=null){
-            escreverNaBarraDeStatusLocalizacao(location.getLatitude(), location.getLongitude(), location.getSpeed(), location.getBearing());
-        }
+        escreverNaBarraDeStatusLocalizacao(location.getLatitude(), location.getLongitude(), location.getSpeed(), location.getBearing());
     }
 
     public String formatarFloat(double numero, String identificador){
@@ -195,7 +195,6 @@ public class Gnss extends AppCompatActivity implements LocationListener{
         return retorno;
     }
 
-
     @RequiresApi(api = Build.VERSION_CODES.N)
     private class GnssStatusCallback extends GnssStatus.Callback{
         public GnssStatusCallback(){
@@ -212,21 +211,8 @@ public class Gnss extends AppCompatActivity implements LocationListener{
         }
         @Override
         public void onSatelliteStatusChanged(@NonNull GnssStatus status) {
-            String mens="Dados do Sitema de Posicionamento\n";
-            if (status!=null) {
-                mens+="Número de Satélites:"+status.getSatelliteCount()+"\n";
-                for(int i=0;i<status.getSatelliteCount();i++) {
-                    mens+="SVID="+status.getSvid(i)+"-"+status.getConstellationType(i)+
-                            "Azi="+status.getAzimuthDegrees(i)+
-                            "Elev="+status.getElevationDegrees(i)+
-                            "Used in Fix"+status.usedInFix(i)+
-                            "SNR="+status.getCn0DbHz(i)+"|X|\n";
-                }
-            }
-            else {
-                mens+="GNSS Não disponível";
-            }
-            txtNumeroGnss.setText(mens);
+            circuloGnss.onSatelliteStatusChanged(status);
+            circuloGnss.invalidate();
         }
     }
 }

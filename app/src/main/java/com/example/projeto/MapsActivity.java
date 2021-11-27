@@ -201,7 +201,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         double velocidade = location.getSpeed();
                         LatLng origem = new LatLng(latidtude, longitude);
                         Calendar c = Calendar.getInstance();
-                        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
                         String formattedDate = df.format(c.getTime());
 
                         //exibindo a localização na barra de status

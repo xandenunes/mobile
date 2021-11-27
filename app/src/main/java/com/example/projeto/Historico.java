@@ -73,11 +73,6 @@ public class Historico extends FragmentActivity implements OnMapReadyCallback {
         });
     }
 
-    public void addRota(LatLng ponto){
-        decodedPath.add(ponto); // latitude e longitude
-        mMap.addPolyline(new PolylineOptions().addAll(decodedPath).color(R.color.white));
-    }
-
     @Override
     public void onRestart() {
         super.onRestart();
@@ -102,9 +97,8 @@ public class Historico extends FragmentActivity implements OnMapReadyCallback {
             for(Local lat : locais){
                 LatLng ponto = new LatLng(lat.getLatitude(), lat.getLongitude());
                 addRota(ponto);
-                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ponto, 18));
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ponto, 20));
             }
-
             int i = locais.size();
             LatLng pontoOrigem = new LatLng(locais.get(0).getLatitude(), locais.get(0).getLongitude());
             LatLng pontoDestino = new LatLng(locais.get(i-1).getLatitude(), locais.get(i-1).getLongitude());
@@ -115,19 +109,22 @@ public class Historico extends FragmentActivity implements OnMapReadyCallback {
         else if(locais.size() == 1){
             LatLng pontoOrigem = new LatLng(locais.get(0).getLatitude(), locais.get(0).getLongitude());
             addMarcadorCarro(pontoOrigem);
-            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(pontoOrigem, 18));
+            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(pontoOrigem, 20));
             db.close();
         }
         db.close();
+    }
+
+    public void addRota(LatLng ponto){
+        decodedPath.add(ponto); // latitude e longitude
+        mMap.addPolyline(new PolylineOptions().addAll(decodedPath).color(R.color.white));
     }
 
     public void addMarcadorComum(LatLng pontoOrigem ){
         mMap.addMarker(new MarkerOptions()
                 .position(pontoOrigem)
                 .title("Origem"));
-
     }
-
 
     public void addMarcadorCarro(LatLng pontoDestino){
         mMap.addMarker(new MarkerOptions()
@@ -146,7 +143,6 @@ public class Historico extends FragmentActivity implements OnMapReadyCallback {
             mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         }
     }
-
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults){

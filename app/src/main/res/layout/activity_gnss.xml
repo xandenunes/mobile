@@ -7,33 +7,23 @@
     tools:context=".Gnss"
     android:background="@drawable/fundo">
 
-
     <View
         android:id="@+id/containerGnss"
         style="@style/containerGnss"
+        app:layout_constraintBottom_toTopOf="@id/containerGnss2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:id="@+id/containerGnss2"
         style="@style/containerGnss2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/containerGnss" />
-
-
-    <TextView
-        android:id="@+id/txt_numeroGnss"
-        app:layout_constraintTop_toTopOf="@id/containerGnss2"
-        app:layout_constraintStart_toStartOf="@id/containerGnss2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="15dp"
-        android:textColor="@color/black"
-        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/titulo_latitudeGnss"
@@ -60,7 +50,6 @@
         android:textColor="@color/black"
         android:textSize="16sp" />
 
-
     <TextView
         android:id="@+id/titulo_longitudeGnss"
         app:layout_constraintStart_toStartOf="@id/containerGnss"
@@ -84,7 +73,6 @@
         android:textColor="@color/black"
         android:textSize="16sp" />
 
-
     <TextView
         android:id="@+id/titulo_velocidadeGnss"
         app:layout_constraintStart_toStartOf="@id/containerGnss"
@@ -98,7 +86,6 @@
         android:textColor="@color/black"
         android:textSize="16sp" />
 
-
     <TextView
         android:id="@+id/text_VelocidadeGnss"
         app:layout_constraintStart_toEndOf="@id/titulo_velocidadeGnss"
@@ -110,7 +97,6 @@
         android:layout_marginBottom="10dp"
         android:textColor="@color/black"
         android:textSize="16sp" />
-
 
     <TextView
         android:id="@+id/titulo_BearingGnss"
@@ -125,7 +111,6 @@
         android:textColor="@color/black"
         android:textSize="16sp" />
 
-
     <TextView
         android:id="@+id/text_BearingGnss"
         app:layout_constraintStart_toEndOf="@id/titulo_BearingGnss"
@@ -138,5 +123,15 @@
         android:textColor="@color/black"
         android:textSize="16sp" />
 
+    <com.example.projeto.circuloGnssView
+        android:id="@+id/circuloGnss"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        app:layout_constraintBottom_toBottomOf="@id/containerGnss2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/containerGnss2"
+        app:layout_constraintTop_toTopOf="@id/containerGnss2"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

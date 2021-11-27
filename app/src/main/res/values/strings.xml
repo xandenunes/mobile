@@ -39,4 +39,5 @@
     <string name="tituloVelocidade">Velocidade:</string>
     <string name="tituloBearing">Bearing:</string>
     <string name="tituloNumeroGnss">Informação sobre o sistema GNSS:</string>
+    <string name="txtTituloLog">Localizações</string>
 </resources>

@@ -29,7 +29,6 @@ public class LogActvity extends AppCompatActivity {
         listLog = (ListView) findViewById(R.id.listlog);
         clickBtn();
         listar();
-
     }
 
     public void listar(){
@@ -39,7 +38,7 @@ public class LogActvity extends AppCompatActivity {
         adapter = new ArrayAdapter<String>(LogActvity.this, android.R.layout.simple_list_item_1, aux);
         listLog.setAdapter(adapter);
         for(Local l : locais){
-            String imprime = "LATITUDE: " + l.getLatitude() + "\nLONGITUDE: " + l.getLongitude() + "\nDATA: " + l.getData();
+            String imprime = "LATITUDE: " + l.getLatitude() + "\nLONGITUDE: " + l.getLongitude() + "\nDATA: " + l.getData().replaceAll("-","/");
             aux.add(imprime);
             adapter.notifyDataSetChanged();
         }

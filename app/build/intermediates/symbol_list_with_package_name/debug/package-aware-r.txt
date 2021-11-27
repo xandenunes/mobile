@@ -2031,6 +2031,7 @@ id chip3
 id chip_group
 id chronometer
 id circle_center
+id circuloGnss
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -2426,8 +2427,8 @@ id txtProgramador4
 id txtProgramador5
 id txtTipo
 id txtTituloConfig
+id txtTituloLog
 id txtTituloProg
-id txt_numeroGnss
 id txtformato
 id txtunidade
 id unchecked
@@ -2778,6 +2779,7 @@ string txtSistTest
 string txtSistVers
 string txtTipo_txt
 string txtTituloConfig
+string txtTituloLog
 string txtTituloProg
 string txt_titleCred
 string txtformato

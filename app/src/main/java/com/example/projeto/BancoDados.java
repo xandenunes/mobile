@@ -31,7 +31,6 @@ public class BancoDados extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
         String CRIA_TABELA = "CREATE TABLE " + TABELA_LOCALIZACAO + "("
                 + COLUNA_CODIGO + " INTEGER PRIMARY KEY, "
                 + COLUNA_LATITUDE + " DOUBLE, "
